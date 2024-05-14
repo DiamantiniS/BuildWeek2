@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Artist | Spotify</title>
+    <link rel="stylesheet" href="./assets/css/circular-font.css">
+    <link rel="stylesheet" href="./assets/css/app.css">
+    <link rel="icon" href="./assets/imgs/logo_circular_green.svg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./assets/css/circular-font.css">
+</head>
+
+<body class="bg-black text-white">
+    <div class="container-fluid px-sm-4">
+        <div class="row pt-sm-3">
+            <div id="navbar" class="col-12 col-sm-1 col-md-3 p-0">
+                <div class="row g-2">
+                    <div class="col-12 p-0" id="nav">
+                        <ul class="ps-0 pt-sm-2 d-flex justify-content-around d-sm-block my-2">
+                            <li class="list-group-item pt-2">
+                                <a href="./index.html"
+                                    class="text-white text-decoration-none d-flex flex-column align-items-center flex-sm-row opacity-75"><img
+                                        src="./assets/imgs/home.svg" /><span
+                                        class="d-block d-sm-none d-md-inline ">Home</span></a>
+                            </li>
+                            <li class="list-group-item pt-2">
+                                <a href="#"
+                                    class="text-white text-decoration-none d-flex flex-column align-items-center flex-sm-row opacity-75"><img
+                                        src="./assets/imgs/searchUnselected.svg" /><span
+                                        class="d-block d-sm-none d-md-inline ">Cerca</span></a>
+                            </li>
+                            <li class="list-group-item pt-2">
+                                <a href="#"
+                                    class="text-white text-decoration-none d-flex flex-column align-items-center flex-sm-row opacity-75"><img
+                                        src="./assets/imgs/libraryExpand.svg" /><span
+                                        class="d-block d-sm-none d-md-inline ">La mia libreria</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-12 bg-dark d-none d-sm-block">
+                        <div class="d-flex gap-3 mt-2">
+                            <img src="#" />
+                            <div class="text-white d-none d-md-block">
+                                <h5>Titolo</h5>
+                                <p>Playlist</p>
+                            </div>
+                        </div>
+                        <div class="d-flex gap-3">
+                            <img src="#" />
+                            <div class="text-white d-none d-md-block">
+                                <h5>Titolo</h5>
+                                <p>Playlist</p>
+                            </div>
+                        </div>
+                        <div class="d-flex gap-3">
+                            <img src="#" />
+                            <div class="text-white d-none d-md-block">
+                                <h5>Titolo</h5>
+                                <p>Playlist</p>
+                            </div>
+                        </div>
+                        <div class="d-flex gap-3">
+                            <img src="#" />
+                            <div class="text-white d-none d-md-block">
+                                <h5>Titolo</h5>
+                                <p>Playlist</p>
+                            </div>
+                        </div>
+                        <div class="d-flex gap-3">
+                            <img src="#" />
+                            <div class="text-white d-none d-md-block">
+                                <h5>Titolo</h5>
+                                <p>Playlist</p>
+                            </div>
+                        </div>
+                        <div class="d-flex gap-3">
+                            <img src="#" />
+                            <div class="text-white d-none d-md-block">
+                                <h5>Titolo</h5>
+                                <p>Playlist</p>
+                            </div>
+                        </div>
+                        <div class="d-flex gap-3">
+                            <img src="#" />
+                            <div class="text-white d-none d-md-block">
+                                <h5>Titolo</h5>
+                                <p>Playlist</p>
+                            </div>
+                        </div>
+                        <div class="d-flex gap-3">
+                            <img src="#" />
+                            <div class="text-white d-none d-md-block">
+                                <h5>Titolo</h5>
+                                <p>Playlist</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="main" class="col-12 col-sm-11 col-md-9 p-0 ps-sm-3 position-relative">
+                <header class="d-flex text-white align-items-center justify-content-start
+                                justify-content-sm-between fixed-top position-absolute top-0 start-0 p-2 ps-sm-4">
+                    <div class="d-sm-flex">
+                        <button class="d-sm-none rounded-circle bg-dark border-0 me-2 fs-4 opacity-75">
+                            <i class="bi bi-arrow-left text-white"></i>
+                        </button>
+                        <button class="d-none d-sm-inline rounded-circle bg-dark border-0 me-2 px-2 fs-4 opacity-75">
+                            <p class="text-white mx-1 my-1 px-1">&lt;</p>
+                        </button>
+                        <button class="d-none d-sm-inline rounded-circle bg-dark border-0 me-2 px-2 fs-4 opacity-75">
+                            <p class="text-white mx-1 my-1 px-1">&gt;</p>
+                        </button>
+                    </div>
+                    <div class="d-none d-sm-flex align-items-center gap-2">
+                        <button class="d-none d-sm-block rounded-circle bg-dark border-0 text-white fs-5 opacity-75"><i
+                                class="bi bi-bell"></i></button>
+                        <p class="bg-danger rounded-circle m-0 px-2 text-white fs-5 border border-4 border-dark">N</p>
+                    </div>                    
+                </header>
+                <div id="imgContainer" class="z-n1 position-absolute top-0 start-0">
+                    <div id="imgGradient" class="ms-sm-3 object-fit-cover fixed-top"></div>
+                    <img id="imgArtist" class="ms-sm-3 object-fit-coverfixed-top"
+                    src="https://e-cdns-images.dzcdn.net/images/artist/1ab642216454f5e5e02c234f93af481c/1000x1000-000000-80-0-0.jpg"
+                        alt="artist img"> <!-- artist -> picture_xl??:...-->
+                </div>
+
+                <div class="px-2">
+                    <div id="container-overImg">
+                        <i class="bi bi-patch-check-fill text-primary d-none d-sm-inline"></i><p class="d-none d-sm-inline taxt-white ms-1">Artista Verificato</p>
+                        <h1 class="text-white">Nome Artista (artist -> name:...)</h1>
+                    </div>
+                    <span>n° ascoltatori mensili (artist -> nb_fan:???)</span>
+                    <div id="playerMenu" class="d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center justify-content-between gap-4">
+                            <button class="btn btn-outline-secondary text-white">Segui</button>
+                            <button class="btn text-white d-sm-none"><i class="bi bi-three-dots-vertical"></i></button> <!--<i class="bi bi-three-dots"></i> orizzontali-->
+                            <button class="btn text-white d-none d-sm-inline"><i class="bi bi-three-dots"></i></button> <!--<i class="bi bi-three-dots"></i> orizzontali-->
+                        </div>
+                        <div class="d-flex gap-2 align-items-center">
+                            <button class="btn text-white fs-2 p-0 opacity-75"><i class="bi bi-shuffle"></i></button>
+                            <button  class="btn text-green-spotyfy fs-1 p-0"><i id="playBtn" class="bi bi-play-circle-fill"></i></button>
+                        </div>
+                    </div>
+                    <div>
+                        <div id="favourites" class="d-flex align-items-center my-3 gap-3">
+                            <button class="btn p-0 position-relative">
+                                <img class="rounded-circle"
+                                src="https://e-cdns-images.dzcdn.net/images/artist/1ab642216454f5e5e02c234f93af481c/56x56-000000-80-0-0.jpg"
+                                alt="artist icon"> <!-- artist -> picture_samll:...-->
+                            </button>
+                            <div>
+                                <h3 class="m-0">Brani che ti piacciono</h3>
+                                <p class="m-0 opacity-75">"n" brano/i di "artista"</p>
+                            </div>
+                        </div>
+                        <h2>Popolari</h2>
+                        <div id="popTrack" class="container-fluid">
+                            <div class="row">
+                                <div class="col-1 d-flex align-items-center justify-content-center">
+                                    <p class="m-0">n°</p>
+                                </div>
+                                <div class="col-10 d-flex">
+                                    <img src="https://placehold.co/50" alt="img album"> <!-- album -> artist -> cover_small:... -->
+                                    <div class="ms-3">
+                                        <h4 class="m-0">"album -> title_short:..."</h4>
+                                        <p class="m-0 opacity-75">"album -> rank:..."</p>
+                                    </div>
+                                </div>
+                                <div class="col-1 d-flex align-items-center justify-content-center">
+                                    <i class="bi bi-three-dots-vertical fs-4 opacity-75"></i>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
