@@ -12764,3 +12764,28 @@ button:hover {
 .last-listen:hover .play {
   display: block;
 }
+
+.icona {
+  position: absolute;
+  top: 38%;
+  right: 10%;
+  display: none;
+}
+
+.effect:hover .icona {
+  display: block;
+}
+
+.icona:hover i {
+  font-size: 50px !important;
+}
+
+.mycard:hover {
+  background-color: rgba(56, 52, 52, 0.6470588235);
+}
+
+#main {
+  height: 90vh;
+  overflow: auto;
+  border-radius: 2em;
+}

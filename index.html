@@ -139,9 +139,12 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-sm-11 col-md-9 py-2 border border-white">
+        <div
+          class="col-12 col-sm-11 col-md-9 py-2 border border-white"
+          id="main"
+        >
           <div
-            class="d-flex text-white align-items-center justify-content-sm-between"
+            class="position-sticky top-0 d-flex text-white align-items-center justify-content-sm-between"
           >
             <div class="d-sm-flex d-none">
               <button
@@ -183,7 +186,7 @@
                     <img src="./assets/imgs/main/image-2.jpg" class="w-25" />
                     <h5 class="ps-3">Titolo</h5>
                     <i
-                      class="bi bi-play-circle-fill text-green-spotyfy ms-auto play"
+                      class="bi bi-play-circle-fill text-green-spotyfy ms-auto play fs-5"
                     ></i>
                   </div>
                 </div>
@@ -192,7 +195,7 @@
                     <img src="./assets/imgs/main/image-2.jpg" class="w-25" />
                     <h5 class="ps-3">Titolo</h5>
                     <i
-                      class="bi bi-play-circle-fill text-green-spotyfy ms-auto play"
+                      class="bi bi-play-circle-fill text-green-spotyfy ms-auto play fs-5"
                     ></i>
                   </div>
                 </div>
@@ -201,7 +204,7 @@
                     <img src="./assets/imgs/main/image-2.jpg" class="w-25" />
                     <h5 class="ps-3">Titolo</h5>
                     <i
-                      class="bi bi-play-circle-fill text-green-spotyfy ms-auto play"
+                      class="bi bi-play-circle-fill text-green-spotyfy ms-auto play fs-5"
                     ></i>
                   </div>
                 </div>
@@ -210,7 +213,7 @@
                     <img src="./assets/imgs/main/image-2.jpg" class="w-25" />
                     <h5 class="ps-3">Titolo</h5>
                     <i
-                      class="bi bi-play-circle-fill text-green-spotyfy ms-auto play"
+                      class="bi bi-play-circle-fill text-green-spotyfy ms-auto play fs-5"
                     ></i>
                   </div>
                 </div>
@@ -219,7 +222,7 @@
                     <img src="./assets/imgs/main/image-2.jpg" class="w-25" />
                     <h5 class="ps-3">Titolo</h5>
                     <i
-                      class="bi bi-play-circle-fill text-green-spotyfy ms-auto play"
+                      class="bi bi-play-circle-fill text-green-spotyfy ms-auto play fs-5"
                     ></i>
                   </div>
                 </div>
@@ -228,7 +231,7 @@
                     <img src="./assets/imgs/main/image-2.jpg" class="w-25" />
                     <h5 class="ps-3">Titolo</h5>
                     <i
-                      class="bi bi-play-circle-fill text-green-spotyfy ms-auto play"
+                      class="bi bi-play-circle-fill text-green-spotyfy ms-auto play fs-5"
                     ></i>
                   </div>
                 </div>
@@ -237,7 +240,7 @@
                     <img src="./assets/imgs/main/image-2.jpg" class="w-25" />
                     <h5 class="ps-3">Titolo</h5>
                     <i
-                      class="bi bi-play-circle-fill text-green-spotyfy ms-auto play"
+                      class="bi bi-play-circle-fill text-green-spotyfy ms-auto play fs-5"
                     ></i>
                   </div>
                 </div>
@@ -246,7 +249,7 @@
                     <img src="./assets/imgs/main/image-2.jpg" class="w-25" />
                     <h5 class="ps-3">Titolo</h5>
                     <i
-                      class="bi bi-play-circle-fill text-green-spotyfy ms-auto play"
+                      class="bi bi-play-circle-fill text-green-spotyfy ms-auto play fs-5"
                     ></i>
                   </div>
                 </div>
@@ -260,24 +263,29 @@
                 </div>
                 <div class="col-8">
                   <div
-                    class="d-flex flex-column justify-content-between h-100 px-2 py-1 w-100"
+                    class="d-flex flex-column justify-content-between h-100 px-1 py-1 w-100"
                   >
                     <div>
                       <h5>Titolo</h5>
                       <p>Playlist</p>
                     </div>
                     <div class="d-flex justify-content-between mt-auto">
-                      <div>
+                      <div class="d-flex">
                         <button class="btn text-white">
                           <i class="bi bi-plus-circle"></i>
                         </button>
-                        <i
-                          class="bi bi-check-circle-fill text-green-spotyfy d-none"
-                        ></i>
+
+                        <button class="btn text-white">
+                          <i
+                            class="bi bi-check-circle-fill text-green-spotyfy d-none"
+                          ></i>
+                        </button>
                       </div>
-                      <i
-                        class="bi bi-play-circle-fill text-green-spotyfy fs-1"
-                      ></i>
+                      <button class="btn">
+                        <i
+                          class="bi bi-play-circle-fill text-green-spotyfy fs-1"
+                        ></i>
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -286,121 +294,185 @@
             <div class="col-12">
               <h5>I tuoi preferiti</h5>
               <div class="row">
-                <div class="col-6 col-sm-4 col-md-3">
-                  <div class="card bg-black text-white">
-                    <a href="#">
+                <div
+                  class="col-6 col-sm-4 col-md-3 mycard position-relative effect pt-2 rounded-3"
+                >
+                  <div class="card bg-transparent border border-0 text-white">
+                    <a href="#" class="text-decoration-none text-white">
                       <img
                         src="./assets/imgs/main/image-10.jpg"
                         class="card-img-top"
                         alt="..."
-                    /></a>
-                    <div class="card-body ps-1">
-                      <h5 class="card-title">Titolo</h5>
-                      <p class="card-text">Album • Artista</p>
-                    </div>
+                      />
+                      <button class="btn icona">
+                        <i
+                          class="bi bi-play-circle-fill text-green-spotyfy fs-1"
+                        ></i>
+                      </button>
+                      <div class="card-body ps-1">
+                        <h5 class="card-title">Titolo</h5>
+                        <p class="card-text">Album • Artista</p>
+                      </div></a
+                    >
                   </div>
                 </div>
-                <div class="col-6 col-sm-4 col-md-3">
-                  <div class="card bg-black text-white">
-                    <a href="#">
+                <div
+                  class="col-6 col-sm-4 col-md-3 mycard position-relative effect pt-2 rounded-3"
+                >
+                  <div class="card bg-transparent border border-0 text-white">
+                    <a href="#" class="text-decoration-none text-white">
                       <img
                         src="./assets/imgs/main/image-10.jpg"
                         class="card-img-top"
                         alt="..."
-                    /></a>
-                    <div class="card-body ps-1">
-                      <h5 class="card-title">Titolo</h5>
-                      <p class="card-text">Album • Artista</p>
-                    </div>
+                      />
+                      <button class="btn icona">
+                        <i
+                          class="bi bi-play-circle-fill text-green-spotyfy fs-1"
+                        ></i>
+                      </button>
+                      <div class="card-body ps-1">
+                        <h5 class="card-title">Titolo</h5>
+                        <p class="card-text">Album • Artista</p>
+                      </div></a
+                    >
                   </div>
                 </div>
-                <div class="col-6 col-sm-4 col-md-3 d-none d-sm-block">
-                  <div class="card bg-black text-white">
-                    <a href="#">
+                <div
+                  class="col-6 col-sm-4 col-md-3 d-none d-sm-block mycard position-relative effect pt-2 rounded-3"
+                >
+                  <div class="card bg-transparent border border-0 text-white">
+                    <a href="#" class="text-decoration-none text-white">
                       <img
                         src="./assets/imgs/main/image-10.jpg"
                         class="card-img-top"
                         alt="..."
-                    /></a>
-                    <div class="card-body ps-1">
-                      <h5 class="card-title">Titolo</h5>
-                      <p class="card-text">Album • Artista</p>
-                    </div>
+                      />
+                      <button class="btn icona">
+                        <i
+                          class="bi bi-play-circle-fill text-green-spotyfy fs-1"
+                        ></i>
+                      </button>
+                      <div class="card-body ps-1">
+                        <h5 class="card-title">Titolo</h5>
+                        <p class="card-text">Album • Artista</p>
+                      </div></a
+                    >
                   </div>
                 </div>
-                <div class="col-6 col-sm-4 col-md-3 d-none d-md-block">
-                  <div class="card bg-black text-white">
-                    <a href="#">
+                <div
+                  class="col-6 col-sm-4 col-md-3 d-none d-md-block mycard position-relative effect pt-2 rounded-3"
+                >
+                  <div class="card bg-transparent border border-0 text-white">
+                    <a href="#" class="text-decoration-none text-white">
                       <img
                         src="./assets/imgs/main/image-10.jpg"
                         class="card-img-top"
                         alt="..."
-                    /></a>
-                    <div class="card-body ps-1">
-                      <h5 class="card-title">Titolo</h5>
-                      <p class="card-text">Album • Artista</p>
-                    </div>
+                      />
+                      <button class="btn icona">
+                        <i
+                          class="bi bi-play-circle-fill text-green-spotyfy fs-1"
+                        ></i>
+                      </button>
+                      <div class="card-body ps-1">
+                        <h5 class="card-title">Titolo</h5>
+                        <p class="card-text">Album • Artista</p>
+                      </div></a
+                    >
                   </div>
                 </div>
               </div>
             </div>
             <div class="col-12">
-              <h5>Create per te</h5>
-              <div class="row gx-2">
-                <div class="col-6 col-sm-4 col-md-3">
-                  <div class="card bg-black text-white">
-                    <a href="#">
+              <h5>I tuoi preferiti</h5>
+              <div class="row">
+                <div
+                  class="col-6 col-sm-4 col-md-3 mycard position-relative effect pt-2 rounded-3"
+                >
+                  <div class="card bg-transparent border border-0 text-white">
+                    <a href="#" class="text-decoration-none text-white">
                       <img
                         src="./assets/imgs/main/image-10.jpg"
                         class="card-img-top"
                         alt="..."
-                    /></a>
-                    <div class="card-body ps-1">
-                      <h5 class="card-title">Titolo</h5>
-                      <p class="card-text">Album • Artista</p>
-                    </div>
+                      />
+                      <button class="btn icona">
+                        <i
+                          class="bi bi-play-circle-fill text-green-spotyfy fs-1"
+                        ></i>
+                      </button>
+                      <div class="card-body ps-1">
+                        <h5 class="card-title">Titolo</h5>
+                        <p class="card-text">Album • Artista</p>
+                      </div></a
+                    >
                   </div>
                 </div>
-                <div class="col-6 col-sm-4 col-md-3">
-                  <div class="card bg-black text-white">
-                    <a href="#">
+                <div
+                  class="col-6 col-sm-4 col-md-3 mycard position-relative effect pt-2 rounded-3"
+                >
+                  <div class="card bg-transparent border border-0 text-white">
+                    <a href="#" class="text-decoration-none text-white">
                       <img
                         src="./assets/imgs/main/image-10.jpg"
                         class="card-img-top"
                         alt="..."
-                    /></a>
-                    <div class="card-body ps-1">
-                      <h5 class="card-title">Titolo</h5>
-                      <p class="card-text">Album • Artista</p>
-                    </div>
+                      />
+                      <button class="btn icona">
+                        <i
+                          class="bi bi-play-circle-fill text-green-spotyfy fs-1"
+                        ></i>
+                      </button>
+                      <div class="card-body ps-1">
+                        <h5 class="card-title">Titolo</h5>
+                        <p class="card-text">Album • Artista</p>
+                      </div></a
+                    >
                   </div>
                 </div>
-                <div class="col-6 col-sm-4 col-md-3 d-none d-sm-block">
-                  <div class="card bg-black text-white">
-                    <a href="#">
+                <div
+                  class="col-6 col-sm-4 col-md-3 d-none d-sm-block mycard position-relative effect pt-2 rounded-3"
+                >
+                  <div class="card bg-transparent border border-0 text-white">
+                    <a href="#" class="text-decoration-none text-white">
                       <img
                         src="./assets/imgs/main/image-10.jpg"
                         class="card-img-top"
                         alt="..."
-                    /></a>
-                    <div class="card-body ps-1">
-                      <h5 class="card-title">Titolo</h5>
-                      <p class="card-text">Album • Artista</p>
-                    </div>
+                      />
+                      <button class="btn icona">
+                        <i
+                          class="bi bi-play-circle-fill text-green-spotyfy fs-1"
+                        ></i>
+                      </button>
+                      <div class="card-body ps-1">
+                        <h5 class="card-title">Titolo</h5>
+                        <p class="card-text">Album • Artista</p>
+                      </div></a
+                    >
                   </div>
                 </div>
-                <div class="col-6 col-sm-4 col-md-3 d-none d-md-block">
-                  <div class="card bg-black text-white">
-                    <a href="#">
+                <div
+                  class="col-6 col-sm-4 col-md-3 d-none d-md-block mycard position-relative effect pt-2 rounded-3"
+                >
+                  <div class="card bg-transparent border border-0 text-white">
+                    <a href="#" class="text-decoration-none text-white">
                       <img
                         src="./assets/imgs/main/image-10.jpg"
                         class="card-img-top"
                         alt="..."
-                    /></a>
-                    <div class="card-body ps-1">
-                      <h5 class="card-title">Titolo</h5>
-                      <p class="card-text">Album • Artista</p>
-                    </div>
+                      />
+                      <button class="btn icona">
+                        <i
+                          class="bi bi-play-circle-fill text-green-spotyfy fs-1"
+                        ></i>
+                      </button>
+                      <div class="card-body ps-1">
+                        <h5 class="card-title">Titolo</h5>
+                        <p class="card-text">Album • Artista</p>
+                      </div></a
+                    >
                   </div>
                 </div>
               </div>
