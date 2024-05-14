@@ -22,6 +22,37 @@
         font-weight: 600;
       }
 
+      #main {
+        height: 90vh;
+        overflow: auto;
+        border-radius: 2em;
+      }
+      #main::-webkit-scrollbar {
+        width: 12px;
+      }
+      #main::-webkit-scrollbar-thumb {
+        background-color: rgba(255, 255, 255, 0.4);
+      }
+
+      .card {
+        position: relative;
+      }
+
+      .button {
+        display: none;
+        position: absolute;
+        bottom: 40%;
+        left: 80%;
+        transform: translateX(-50%);
+        border: none;
+        cursor: pointer;
+        background-color: transparent;
+      }
+
+      .card:hover .button {
+        display: block;
+      }
+
       @media screen and (max-width: 577px) {
         #titolo {
           font-size: 3rem;
@@ -135,9 +166,9 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-sm-11 col-md-9 py-2">
+        <div class="col-12 col-sm-11 col-md-9 py-2 position-relative" id="main">
           <div
-            class="d-flex text-white align-items-center justify-content-sm-between"
+            class="d-flex text-white align-items-center justify-content-sm-between position-sticky top-0"
           >
             <div class="d-sm-flex d-none">
               <button
@@ -269,9 +300,14 @@
                 <p class="card-text text-white">TITOLO ALBUM</p>
                 <p class="card-text text-white">ANNO USCITA</p>
               </div>
+              <button class="button" style="font-size: 3em">
+                <i
+                  class="bi bi-play-circle-fill text-green-spotyfy bg-black rounded-circle"
+                ></i>
+              </button>
             </div>
 
-            <div class="card me-4 bg-transparent" style="width: 10rem">
+            <div class="card me-2 me-sm-4 bg-transparent" style="width: 10rem">
               <img
                 src="./assets/imgs/main/image-10.jpg"
                 class="card-img-top"
@@ -281,6 +317,11 @@
                 <p class="card-text text-white">TITOLO ALBUM</p>
                 <p class="card-text text-white">ANNO USCITA</p>
               </div>
+              <button class="button" style="font-size: 3em">
+                <i
+                  class="bi bi-play-circle-fill text-green-spotyfy bg-black rounded-circle"
+                ></i>
+              </button>
             </div>
           </div>
           <div class="mt-5 d-none d-sm-block">
