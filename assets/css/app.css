@@ -12201,8 +12201,19 @@ button:hover {
 
 #imgContainer {
   width: 100%;
+  height: 45vh;
+
 }
 
 #playBtn {
   font-size: 55px;
+}
+
+#shuffleBtn:hover {
+  color: #1DB954 !important;
+}
+
+#main {
+  height: 90vh;
+  overflow: auto;
 }
