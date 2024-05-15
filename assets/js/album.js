@@ -82,7 +82,7 @@ const unpackAlbum = function (object) {
     <i class="bi bi-plus-circle me-4"></i>
     <p class="minutes-song">${Math.floor(element.duration / 60)}:${Math.floor(
       element.duration % 60
-    )} Minuti</p>
+    )} </p>
     <i class="bi bi-three-dots text-white mx-2"></i>
   </div>`;
     songList.appendChild(divCanzone);
