@@ -147,7 +147,7 @@
                         <i class="bi bi-patch-check-fill text-primary d-none d-sm-inline"></i><p class="d-none d-sm-inline taxt-white ms-1">Artista Verificato</p>
                         <h1 id="artistNameTitle" class="text-white">Nome Artista (artist -> name:...)</h1>
                     </div>
-                    <span>n° ascoltatori mensili (artist -> nb_fan:???)</span>
+                    <span id="listener-mth"></span>
                     <div id="playerMenu" class="d-flex flex-sm-row-reverse justify-content-between justify-content-sm-end gap-3">
                         <div class="d-flex align-items-center justify-content-between gap-3 mb-2">
                             <button class="btn btn-outline-secondary text-white d-sm-none">Segui</button>
@@ -163,13 +163,13 @@
                     <div>
                         <div id="favourites" class="d-flex align-items-center my-3 gap-3">
                             <button class="btn p-0 position-relative">
-                                <img class="rounded-circle"
+                                <img id="imgArtistSmall" class="rounded-circle"
                                 src="https://e-cdns-images.dzcdn.net/images/artist/1ab642216454f5e5e02c234f93af481c/56x56-000000-80-0-0.jpg"
                                 alt="artist icon"> <!-- artist -> picture_samll:...-->
                             </button>
                             <div>
                                 <h3 class="m-0">Brani che ti piacciono</h3>
-                                <p class="m-0 opacity-75">"n" brano/i di "artista"</p>
+                                <p id="prefSong" class="m-0 opacity-75">"n" brano/i di "artista"</p>
                             </div>
                         </div>
                         <!-- PIU' ASCOLTATE -->

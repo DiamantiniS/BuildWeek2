@@ -46,6 +46,7 @@ const displayedSongs = 5;
 const unpackArtist = function (object) {
   const nomeArtista = object.name;
   const thumbnailArtista = object.picture_xl;
+  const thumbnailArtistaSmall = object.picture_small;
   const ascoltatoriMensili = object.nb_fan;
   const tracklistUrl = object.tracklist;
   indirizzoTracks = tracklistUrl;
@@ -56,6 +57,7 @@ const unpackArtist = function (object) {
   document.getElementById("artistNameHeader").innerHTML = nomeArtista;
   document.getElementsByTagName("title")[0].innerHTML = nomeArtista + ' | Spotify';
   document.getElementById("imgArtist").setAttribute("src", thumbnailArtista);
+  document.getElementById("imgArtistSmall").setAttribute("src", thumbnailArtistaSmall);
   document.getElementById("listener-mth").innerHTML =
     ascoltatoriMensili + " ascoltatori mensili";
 };
