@@ -38,11 +38,65 @@ const recomendedPlaylist = function () {
 
 recomendedPlaylist();
 
+// RECUPERA ALBUM
+
+const addressBarContent = new URLSearchParams(location.search);
+let albumId = addressBarContent.get("albumId");
+if (!albumId) {
+  albumId = "75621062";
+}
+
 // MAIN PAGINA ALBUM
+
+const altroDiArtista = function (obj) {
+  const albumArtista = document.getElementById("album-artista");
+  albumArtista.innerHTML = "";
+  for (let i = 0; i < 2; i++) {
+    let cardAlbum = document.createElement("div");
+    cardAlbum.setAttribute("style", "width: 10rem");
+    cardAlbum.classList.add("card", "bg-dark", "me-2", "me-sm-4");
+    cardAlbum.innerHTML = `<img
+    src="${obj.data[i].album.cover_medium}"
+    class="card-img-top"
+    alt="album"
+  />
+  <div class="card-body">
+    <p class="card-text text-white">${obj.data[i].album.title}</p>
+    <p class="card-text text-white">ANNO USCITA</p>
+  </div>
+  <button class="button" style="font-size: 3em">
+    <i
+      class="bi bi-play-circle-fill text-green-spotyfy bg-black rounded-circle"
+    ></i>
+  </button>`;
+    albumArtista.appendChild(cardAlbum);
+  }
+};
+
+const fetchAltro = function (id) {
+  fetch(
+    `https://striveschool-api.herokuapp.com/api/deezer/artist/${id}/top?limit=50`,
+    {}
+  )
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error("Errore caricamento catalogo");
+      }
+    })
+    .then((obj) => {
+      altroDiArtista(obj);
+      //console.log(obj);
+    })
+    .catch((err) => {
+      console.log("Error", err);
+    });
+};
 
 const unpackAlbum = function (object) {
   const titoloAlbum = object.title;
-  const coverAlbum = object.cover;
+  const coverAlbum = object.cover_big;
   const autore = object.artist.name;
   const artistImg = object.artist.picture_small;
   const durataInMinuti = parseInt(object.duration / 60);
@@ -82,15 +136,19 @@ const unpackAlbum = function (object) {
     <i class="bi bi-plus-circle me-4"></i>
     <p class="minutes-song">${Math.floor(element.duration / 60)}:${Math.floor(
       element.duration % 60
-    )} Minuti</p>
+    )} </p>
     <i class="bi bi-three-dots text-white mx-2"></i>
   </div>`;
     songList.appendChild(divCanzone);
   });
+  fetchAltro(arrayTracks[0].artist.id);
 };
 
 const getAlbum = function () {
-  fetch("https://striveschool-api.herokuapp.com/api/deezer/album/75621062", {})
+  fetch(
+    `https://striveschool-api.herokuapp.com/api/deezer/album/${albumId}`,
+    {}
+  )
     .then((response) => {
       if (response.ok) {
         return response.json();
