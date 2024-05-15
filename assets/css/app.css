@@ -12830,3 +12830,16 @@ button:hover {
 #main::-webkit-scrollbar-thumb {
   background-color: rgba(255, 255, 255, 0.4);
 }
+
+#div-playlist {
+  height: 80vh;
+  overflow: auto;
+}
+
+#div-playlist::-webkit-scrollbar {
+  width: 12px;
+}
+
+#div-playlist::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.4);
+}

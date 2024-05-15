@@ -53,6 +53,8 @@ const unpackArtist = function (object) {
 
   console.log(nomeArtista);
   document.querySelector("#container-overImg h1").innerHTML = nomeArtista;
+  document.getElementById("artistNameHeader").innerHTML = nomeArtista;
+  document.getElementsByTagName("title")[0].innerHTML = nomeArtista + ' | Spotify';
   document.getElementById("imgArtist").setAttribute("src", thumbnailArtista);
   document.getElementById("listener-mth").innerHTML =
     ascoltatoriMensili + " ascoltatori mensili";
