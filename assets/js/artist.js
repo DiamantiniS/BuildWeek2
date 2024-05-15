@@ -46,6 +46,7 @@ const displayedSongs = 5;
 const unpackArtist = function (object) {
   const nomeArtista = object.name;
   const thumbnailArtista = object.picture_xl;
+  const thumbnailArtistaSmall = object.picture_small;
   const ascoltatoriMensili = object.nb_fan;
   const tracklistUrl = object.tracklist;
   indirizzoTracks = tracklistUrl;
@@ -53,13 +54,16 @@ const unpackArtist = function (object) {
 
   console.log(nomeArtista);
   document.querySelector("#container-overImg h1").innerHTML = nomeArtista;
+  document.getElementById("artistNameHeader").innerHTML = nomeArtista;
+  document.getElementsByTagName("title")[0].innerHTML = nomeArtista + ' | Spotify';
   document.getElementById("imgArtist").setAttribute("src", thumbnailArtista);
+  document.getElementById("imgArtistSmall").setAttribute("src", thumbnailArtistaSmall);
   document.getElementById("listener-mth").innerHTML =
     ascoltatoriMensili + " ascoltatori mensili";
 };
 
 const getArtist = function () {
-  fetch(" https://striveschool-api.herokuapp.com/api/deezer/artist/412", {})
+  fetch(" https://striveschool-api.herokuapp.com/api/deezer/artist/412", {}) //qui va inserita la variabile con l'indirizzo+id
     .then((response) => {
       if (response.ok) {
         return response.json();
@@ -83,19 +87,21 @@ const unpackTracks = function (object) {
   divPopolari.innerHTML = "";
   for (let i = 0; i < displayedSongs; i++) {
     object.data[i];
-    divPopolari.innerHTML += `<div class="col-1 d-flex align-items-center justify-content-center">
-    <p class="m-0">${i + 1}</p>
-</div>
-<div class="col-10 d-flex  mb-1">
-    <img src="${object.data[i].album.cover_small}" alt="img album">
-    <div class="ms-3">
-        <h4 class="m-0">${object.data[i].album.title}</h4>
-        <p class="m-0 opacity-75">${object.data[i].rank}</p>
+    divPopolari.innerHTML += `
+    <div class="col-1 d-flex align-items-center justify-content-center">
+        <p class="m-0">${i + 1}</p>
     </div>
-</div>
-<div class="col-1 d-flex align-items-center justify-content-center">
-    <i class="bi bi-three-dots-vertical fs-4 opacity-75"></i>
-</div>`;
+    <div class="col-10 d-flex  mb-1">
+        <img src="${object.data[i].album.cover_small}" alt="img album">
+        <div class="ms-3">
+            <h4 class="m-0">${object.data[i].album.title}</h4>
+            <p class="m-0 opacity-75">${object.data[i].rank}</p>
+        </div>
+    </div>
+    <div class="col-1 d-flex align-items-center justify-content-center">
+        <i class="bi bi-three-dots-vertical fs-4 opacity-75"></i>
+    </div>
+    `;
     console.log(object.data[i]);
   }
 };
@@ -118,3 +124,24 @@ const getTracks = function () {
 };
 
 getArtist();
+
+
+//funzione per scroll
+let mainContainer = document.getElementById('main')
+let playHeader = document.getElementById('playHeader')
+let artistNameHeader = document.getElementById('artistNameHeader')
+let header = document.getElementById('header')
+mainContainer.addEventListener('scroll', function (e) {
+  let scroll = e.target.scrollTop;
+  console.log('scroll main =', scroll);       //260 
+  if (scroll > 312) {
+    playHeader.classList.add('d-sm-inline')
+    artistNameHeader.classList.add('d-sm-inline')
+    header.classList.add('bg-black')
+  } else {
+    playHeader.classList.remove('d-sm-inline')
+    artistNameHeader.classList.remove('d-sm-inline')
+    header.classList.remove('bg-black')
+  }
+})
+//
