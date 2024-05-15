@@ -12189,7 +12189,7 @@ button:hover {
 }
 
 #container-overImg {
-  margin-top: 30vh;
+  margin-top: 15vh;
   width: 100%;
 }
 
@@ -12216,4 +12216,13 @@ button:hover {
 #main {
   height: 90vh;
   overflow: auto;
+  border-radius: 2em;
 }
+
+#main::-webkit-scrollbar {
+  width: 12px;
+  }
+
+#main::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.4);
+  }

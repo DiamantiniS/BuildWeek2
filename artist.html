@@ -13,7 +13,7 @@
 <body class="bg-black text-white">
     <div class="container-fluid px-sm-4">
         <div class="row pt-sm-3 m-0">
-            <div id="navbar" class="col-12 col-sm-1 col-md-3 p-0">
+            <div id="navbar" class="col-12 col-sm-1 col-md-3 p-0 ">
                 <div class="row g-2">
                     <div class="col-12 p-0" id="nav">
                         <ul class="ps-0 pt-sm-2 d-flex justify-content-around d-sm-block my-2">
@@ -98,10 +98,9 @@
                     </div>
                 </div>
             </div>
-            <!-- MAIN -->
-            <div id="main" class="col-12 col-sm-11 col-md-9 p-0 ps-sm-3 position-relative ">
-                <header class="d-flex text-white align-items-center justify-content-start 
-                                justify-content-sm-between fixed-top position-static top-0 p-2 ps-sm-4">
+            <div id="main" class="col-12 col-sm-11 col-md-9 p-0 ps-sm-3 position-relative">
+                <header id="header" class="d-flex text-white align-items-center justify-content-start position-sticky top-0 
+                                justify-content-sm-between p-2 ps-sm-4">
                     <div class="d-sm-flex">
                         <button class="d-sm-none rounded-circle bg-dark border-0 me-2 fs-4 opacity-75">
                             <i class="bi bi-arrow-left text-white"></i>
@@ -109,9 +108,12 @@
                         <button class="d-none d-sm-inline rounded-circle bg-dark border-0 me-2 px-2 fs-4 opacity-75">
                             <p class="text-white mx-1 my-1 px-1">&lt;</p>
                         </button>
-                        <button class="d-none d-sm-inline rounded-circle bg-dark border-0 me-2 px-2 fs-4 opacity-75">
+                        <button class="d-none d-md-inline rounded-circle bg-dark border-0 me-2 px-2 fs-4 opacity-75">
                             <p class="text-white mx-1 my-1 px-1">&gt;</p>
                         </button>
+                        <button id="playHeader" class="btn text-green-spotyfy fs-1 d-none"><i id="playBtn" class="bi bi-play-circle-fill"></i></button>
+                        <h1 id="artistNameHeader" class="text-white d-none">Nome Artista (artist -> name:...)</h1>
+
                     </div>
                     <div class="d-none d-sm-flex align-items-center gap-2">
                         <button class="d-none d-sm-block rounded-circle bg-dark border-0 text-white fs-5 opacity-75"><i
@@ -129,18 +131,19 @@
                 <div class="px-2">
                     <div id="container-overImg">
                         <i class="bi bi-patch-check-fill text-primary d-none d-sm-inline"></i><p class="d-none d-sm-inline taxt-white ms-1">Artista Verificato</p>
-                        <h1 class="text-white">Nome Artista</h1>
+                        <h1 id="artistNameTitle" class="text-white">Nome Artista (artist -> name:...)</h1>
                     </div>
-                    <span id="listener-mth">n° ascoltatori mensili</span>
-                    <div id="playerMenu" class="d-flex align-items-center justify-content-between">
-                        <div class="d-flex align-items-center justify-content-between gap-4">
-                            <button class="btn btn-outline-secondary text-white">Segui</button>
+                    <span>n° ascoltatori mensili (artist -> nb_fan:???)</span>
+                    <div id="playerMenu" class="d-flex flex-sm-row-reverse justify-content-between justify-content-sm-end gap-3">
+                        <div class="d-flex align-items-center justify-content-between gap-3 mb-2">
+                            <button class="btn btn-outline-secondary text-white d-sm-none">Segui</button>
+                            <button class="btn btn-outline-secondary text-white rounded-pill px-3 py-1 d-sm-inline">Segui</button>
                             <button class="btn text-white d-sm-none"><i class="bi bi-three-dots-vertical"></i></button> <!--<i class="bi bi-three-dots"></i> orizzontali-->
                             <button class="btn text-white d-none d-sm-inline"><i class="bi bi-three-dots"></i></button> <!--<i class="bi bi-three-dots"></i> orizzontali-->
                         </div>
                         <div class="d-flex gap-2 align-items-center">
-                            <button id="shuffleBtn" class="btn text-white fs-2 p-0 opacity-75"><i class="bi bi-shuffle"></i></button>
-                            <button  class="btn text-green-spotyfy fs-1 p-0"><i id="playBtn" class="bi bi-play-circle-fill"></i></button>
+                            <button id="shuffleBtn" class="btn text-white fs-2 p-0 opacity-75 d-sm-none"><i class="bi bi-shuffle"></i></button>
+                            <button id="playPlayer" class="btn text-green-spotyfy fs-1"><i id="playBtn" class="bi bi-play-circle-fill"></i></button>
                         </div>
                     </div>
                     <div>
