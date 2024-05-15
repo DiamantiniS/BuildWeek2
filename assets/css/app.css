@@ -12216,7 +12216,6 @@ button:hover {
 #main {
   height: 90vh;
   overflow: auto;
-  border-radius: 2em;
 }
 
 #main::-webkit-scrollbar {
