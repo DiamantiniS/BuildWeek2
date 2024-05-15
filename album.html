@@ -21,10 +21,52 @@
         font-size: 2em;
         font-weight: bold;
       }
+
+      #main {
+        height: 90vh;
+        overflow: auto;
+        border-radius: 2em;
+      }
+      #main::-webkit-scrollbar {
+        width: 12px;
+      }
+      #main::-webkit-scrollbar-thumb {
+        background-color: rgba(255, 255, 255, 0.4);
+      }
+
+      .card {
+        position: relative;
+      }
+
+      .button {
+        display: none;
+        position: absolute;
+        bottom: 40%;
+        left: 80%;
+        transform: translateX(-50%);
+        border: none;
+        cursor: pointer;
+        background-color: transparent;
+      }
+
+      .card:hover .button {
+        display: block;
+      }
+
+      @media screen and (max-width: 577px) {
+        #titolo {
+          font-size: 3rem;
+        }
+        #img-album {
+          width: 25rem !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+        }
+      }
     </style>
   </head>
   <body class="bg-black vh-100 text-white">
-    <div class="container-fluid px-4">
+    <div class="container-fluid px-3 px-sm-4">
       <div class="row pt-3">
         <div class="col-12 col-sm-1 col-md-3">
           <div class="row g-2">
@@ -128,10 +170,9 @@
             </div>
           </div>
         </div>
-        <!-- SEZIONE ALBUM -->
-        <div class="col-12 col-sm-11 col-md-9 py-2 border border-white">
+        <div class="col-12 col-sm-11 col-md-9 py-2 position-relative" id="main">
           <div
-            class="d-flex text-white align-items-center justify-content-sm-between"
+            class="d-flex text-white align-items-center justify-content-sm-between position-sticky top-0"
           >
             <div class="d-sm-flex d-none">
               <button
@@ -149,26 +190,29 @@
               <button
                 class="d-none d-sm-block rounded-circle bg-dark border-0 text-white fs-5 opacity-75"
               >
-                <i class="bi bi-bell"></i>
+                <i class="bi bi-bell fs-4"></i>
               </button>
               <p
-                class="bg-danger rounded-circle m-0 px-2 text-white fs-5 border border-4 border-dark"
+                class="bg-danger rounded-circle m-0 px-2 text-white fs-5 border border-4 border-dark d-none d-sm-block"
               >
                 N
               </p>
             </div>
-            <div class="d-sm-none d-flex pt-3">
-              <p class="bg-dark rounded-pill px-3 py-1 ms-2">Tutti</p>
-              <p class="bg-dark rounded-pill px-3 py-1 ms-2">Musica</p>
-              <p class="bg-dark rounded-pill px-3 py-1 ms-2">Podcast</p>
-            </div>
           </div>
           <!-------------- inizio album     -->
-          <div class="d-flex pt-5" id="hero-album">
-            <img src="./assets/imgs/main/image-1.jpg" alt="album" class="m-3" />
-
+          <div
+            class="d-flex pt-0 pt-sm-5 flex-column flex-sm-row"
+            id="hero-album"
+          >
+            <img
+              src="./assets/imgs/main/image-1.jpg"
+              alt="album"
+              style="width: 14rem"
+              class="m-3"
+              id="img-album"
+            />
             <div>
-              <p>Album</p>
+              <p class="d-none d-sm-block">Album</p>
               <p id="titolo">TITOLO</p>
               <div class="d-flex mt-3" id="info-album">
                 <img src="#" alt="artist pic" class="me-1" />
@@ -197,9 +241,26 @@
               <span class="ms-3"><i class="bi bi-list-ul"></i></span>
             </div>
           </div>
+          <!------- inizio player sotto album mobile-->
+          <div
+            class="d-flex justify-content-between align-items-center d-sm-none mt-2"
+          >
+            <div>
+              <i class="bi bi-heart fs-2"></i>
+              <i class="bi bi-arrow-down-circle fs-2 mx-4"></i>
+              <i class="bi bi-three-dots-vertical fs-2"></i>
+            </div>
+            <div class="d-flex align-items-center">
+              <i class="bi bi-shuffle fs-2 me-3"></i>
+              <i
+                class="bi bi-play-circle-fill text-green-spotyfy"
+                style="font-size: 3em"
+              ></i>
+            </div>
+          </div>
           <!------inizio head lista  -->
           <div
-            class="d-flex justify-content-between mt-3 ms-4 border-bottom border-white"
+            class="d-flex justify-content-between mt-3 ms-4 border-bottom border-white d-none d-sm-flex"
           >
             <div class="d-flex">
               <p>#</p>
@@ -238,8 +299,8 @@
             <p>Vedi discografia</p>
           </div>
 
-          <div class="d-flex">
-            <div class="card me-4 bg-transparent" style="width: 10rem">
+          <div class="d-flex" id="album-artista">
+            <div class="card me-2 me-sm-4 bg-transparent" style="width: 10rem">
               <img
                 src="./assets/imgs/main/image-10.jpg"
                 class="card-img-top"
@@ -249,9 +310,14 @@
                 <p class="card-text text-white">TITOLO ALBUM</p>
                 <p class="card-text text-white">ANNO USCITA</p>
               </div>
+              <button class="button" style="font-size: 3em">
+                <i
+                  class="bi bi-play-circle-fill text-green-spotyfy bg-black rounded-circle"
+                ></i>
+              </button>
             </div>
 
-            <div class="card me-4 bg-transparent" style="width: 10rem">
+            <div class="card me-2 me-sm-4 bg-transparent" style="width: 10rem">
               <img
                 src="./assets/imgs/main/image-10.jpg"
                 class="card-img-top"
@@ -261,9 +327,14 @@
                 <p class="card-text text-white">TITOLO ALBUM</p>
                 <p class="card-text text-white">ANNO USCITA</p>
               </div>
+              <button class="button" style="font-size: 3em">
+                <i
+                  class="bi bi-play-circle-fill text-green-spotyfy bg-black rounded-circle"
+                ></i>
+              </button>
             </div>
           </div>
-          <footer class="mt-5">
+          <div class="mt-5 d-none d-sm-block">
             <div class="container border-bottom border-white pb-3">
               <div class="row-cols-6 d-flex justify-content-around">
                 <div class="col">
@@ -302,7 +373,7 @@
               </div>
             </div>
             <div>
-              <div class="container my-5">
+              <div class="container my-5 d-none d-sm-block">
                 <div class="row">
                   <div class="col d-flex">
                     <p class="me-3">Informazioni legali</p>
@@ -316,7 +387,7 @@
                 </div>
               </div>
             </div>
-          </footer>
+          </div>
         </div>
       </div>
     </div>
