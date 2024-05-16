@@ -12846,3 +12846,7 @@ button:hover {
 .canzone:hover {
   background-color: rgba(56, 52, 52, 0.6470588235);
 }
+
+.barra {
+  z-index: 2;
+}
