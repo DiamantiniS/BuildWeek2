@@ -162,10 +162,10 @@ function adjustColorIfTooLight(hexColor) {
   const luminance = rgbToLuminance(rgb.r, rgb.g, rgb.b);
 
   // Soglia di luminosità, 0.7 può essere regolata a seconda delle necessità
-  const threshold = 0.7;
+  const threshold = 0.5;
 
   if (luminance > threshold) {
-      return '0f0f0f'; // Colore troppo chiaro, ritorna nero
+      return '3c3c3b'; // Colore troppo chiaro, ritorna nero
   } else {
       return hexColor; // Colore sufficientemente scuro, ritorna il colore originale
   }
@@ -188,7 +188,7 @@ const scroll = function(hex) {
   let newHex = hex
   mainContainer.addEventListener('scroll', function (e) {
     let scroll = e.target.scrollTop;
-    console.log('scroll main =', scroll);       //260 
+    //console.log('scroll main =', scroll);       //260 
     if (scroll > 312) {
       playHeader.classList.add('d-sm-inline')
       artistNameHeader.classList.add('d-sm-inline')
