@@ -9,7 +9,7 @@ const showPlaylist = function (object) {
   for (let i = 0; i < numeroConsigliati; i++) {
     let singolaPlaylist = document.createElement("div");
     singolaPlaylist.classList.add("d-flex", "gap-3");
-    singolaPlaylist.innerHTML = `<img src="${arrayPlaylist[i].album.cover_small}" class="object-fit-cover p-1"/>
+    singolaPlaylist.innerHTML = `<img src="${arrayPlaylist[i].album.cover_small}" class="object-fit-cover p-1 img-fluid"/>
   <div class="text-white d-none d-md-block">
     <h5>${arrayPlaylist[i].title_short}</h5>
     <p>${arrayPlaylist[i].artist.name}</p>
