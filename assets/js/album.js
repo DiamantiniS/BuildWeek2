@@ -9,7 +9,7 @@ const showPlaylist = function (object) {
   for (let i = 0; i < numeroConsigliati; i++) {
     let singolaPlaylist = document.createElement("div");
     singolaPlaylist.classList.add("d-flex", "gap-3");
-    singolaPlaylist.innerHTML = `<img src="${arrayPlaylist[i].album.cover_small}" class="object-fit-cover p-1"/>
+    singolaPlaylist.innerHTML = `<img src="${arrayPlaylist[i].album.cover_small}" class="object-fit-cover p-1 img-fluid"/>
   <div class="text-white d-none d-md-block">
     <h5>${arrayPlaylist[i].title_short}</h5>
     <p>${arrayPlaylist[i].artist.name}</p>
@@ -94,6 +94,30 @@ const fetchAltro = function (id) {
     });
 };
 
+// CAMBIO PAGINA, ARTISTA SELEZIONATO
+
+const artistaSelezionato = function () {
+  window.location.href = `artist.html?artistId=${this.title}`;
+};
+
+// FUNZIONE PER USARE IL PLAYER
+
+const uploadPlayer = function () {
+  const srcPlayer = document.querySelector("#song source");
+  const imgPlayer = document.querySelector(".image-container img");
+  const tagAudio = document.getElementById("song");
+  const titoloPlayer = document.querySelector(".title");
+  const artistaPlayer = document.querySelector(".artist");
+
+  srcPlayer.src = this.getAttribute("id");
+  imgPlayer.src = this.getAttribute("title");
+  titoloPlayer.innerText = this.querySelector(".name-song").innerText;
+  artistaPlayer.innerText = this.querySelector(".name-artist").innerText;
+  tagAudio.load();
+};
+
+// INSERIMENTO TRACCE
+
 const unpackAlbum = function (object) {
   const titoloAlbum = object.title;
   const coverAlbum = object.cover_big;
@@ -118,6 +142,12 @@ const unpackAlbum = function (object) {
     " brani • " +
     durataInMinuti +
     " min";
+  document
+    .getElementById("info-album")
+    .setAttribute("title", `${object.artist.id}`);
+  document
+    .getElementById("info-album")
+    .addEventListener("click", artistaSelezionato);
 
   console.log(arrayTracks);
   const songList = document.getElementById("list-songs");
@@ -125,6 +155,8 @@ const unpackAlbum = function (object) {
   arrayTracks.forEach((element, index) => {
     const divCanzone = document.createElement("div");
     divCanzone.classList.add("d-flex", "justify-content-between", "mt-3");
+    divCanzone.setAttribute("id", `${element.preview}`);
+    divCanzone.setAttribute("title", `${element.album.cover_small}`);
     divCanzone.innerHTML = `<div class="d-flex">
     <div class="px-4 py-3 number-song">${index + 1}</div>
     <div>
@@ -139,6 +171,7 @@ const unpackAlbum = function (object) {
     )} </p>
     <i class="bi bi-three-dots text-white mx-2"></i>
   </div>`;
+    divCanzone.addEventListener("click", uploadPlayer);
     songList.appendChild(divCanzone);
   });
   fetchAltro(arrayTracks[0].artist.id);
