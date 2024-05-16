@@ -44,6 +44,42 @@ const albumSelezionato = function () {
   window.location.href = `album.html?albumId=${this.id}`;
 };
 
+//CAMBIO BOTTONE DA PLUS A CHECK E VICEVERSA
+const buttonFunction = function () {
+  const plusElements = document.getElementsByClassName("plus");
+  const checkElements = document.getElementsByClassName("check");
+
+  //Il plus diventa check
+  Array.from(plusElements).forEach((plus, i) => {
+    console.log("entro nel foreach");
+    plus.addEventListener("click", function (e) {
+      e.preventDefault();
+      console.log("diventa check");
+
+      plus.classList.remove("d-block");
+      plus.classList.add("d-none");
+
+      const check = checkElements[i];
+      check.classList.remove("d-none");
+      check.classList.add("d-block");
+    });
+  });
+
+  //Il check diventa plus
+  Array.from(checkElements).forEach((check, i) => {
+    check.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      check.classList.remove("d-block");
+      check.classList.add("d-none");
+
+      const plus = plusElements[i];
+      plus.classList.remove("d-none");
+      plus.classList.add("d-block");
+    });
+  });
+};
+
 const fullHomepage = function (object) {
   const arrayHome = object.data;
   console.log("arrayHome", arrayHome);
@@ -81,13 +117,13 @@ const fullHomepage = function (object) {
       </div>
       <div class="d-flex justify-content-between mt-auto">
         <div class="d-flex">
-          <button class="btn text-white">
+          <button class="btn text-white plus">
             <i class="bi bi-plus-circle"></i>
           </button>
 
-          <button class="btn text-white">
+          <button class="btn text-white check d-none">
             <i
-              class="bi bi-check-circle-fill text-green-spotyfy d-none"
+              class="bi bi-check-circle-fill text-green-spotyfy"
             ></i>
           </button>
         </div>
@@ -101,6 +137,7 @@ const fullHomepage = function (object) {
   </div>`;
   const newTrackImg = document.getElementById(arrayHome[8].album.id);
   newTrackImg.addEventListener("click", albumSelezionato);
+  buttonFunction();
   //ALBUM PREFERITI
   const divPreferiti = document.getElementById("album-preferiti");
   divPreferiti.innerHTML = "";

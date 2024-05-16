@@ -62,7 +62,6 @@ const altroDiArtista = function (obj) {
   />
   <div class="card-body">
     <p class="card-text text-white">${obj.data[i].album.title}</p>
-    <p class="card-text text-white">ANNO USCITA</p>
   </div>
   <button class="button" style="font-size: 3em">
     <i
@@ -98,6 +97,44 @@ const fetchAltro = function (id) {
 
 const artistaSelezionato = function () {
   window.location.href = `artist.html?artistId=${this.title}`;
+};
+
+// BOTTONI PLUS E CHECK
+
+const buttonFunction = function () {
+  const plusElements = document.getElementsByClassName("plus");
+  const checkElements = document.getElementsByClassName("check");
+
+  //Il plus diventa check
+  Array.from(plusElements).forEach((plus, i) => {
+    console.log("entro nel foreach");
+    plus.addEventListener("click", function (e) {
+      e.preventDefault();
+      console.log("diventa check");
+
+      plus.classList.remove("d-block");
+      plus.classList.add("d-none");
+
+      const check = checkElements[i];
+      check.classList.remove("d-none");
+      check.classList.add("d-block");
+    });
+  });
+
+  //Il check diventa plus
+  Array.from(checkElements).forEach((check, i) => {
+    check.addEventListener("click", function (e) {
+      e.preventDefault();
+      console.log("torna plus");
+
+      check.classList.remove("d-block");
+      check.classList.add("d-none");
+
+      const plus = plusElements[i];
+      plus.classList.remove("d-none");
+      plus.classList.add("d-block");
+    });
+  });
 };
 
 // FUNZIONE PER USARE IL PLAYER
@@ -154,7 +191,12 @@ const unpackAlbum = function (object) {
   songList.innerHTML = "";
   arrayTracks.forEach((element, index) => {
     const divCanzone = document.createElement("div");
-    divCanzone.classList.add("d-flex", "justify-content-between", "mt-3");
+    divCanzone.classList.add(
+      "d-flex",
+      "justify-content-between",
+      "mt-3",
+      "canzone"
+    );
     divCanzone.setAttribute("id", `${element.preview}`);
     divCanzone.setAttribute("title", `${element.album.cover_small}`);
     divCanzone.innerHTML = `<div class="d-flex">
@@ -164,17 +206,25 @@ const unpackAlbum = function (object) {
       <p class="name-artist">${element.artist.name}</p>
     </div>
   </div>
-  <div class="d-flex mt-2">
-    <i class="bi bi-plus-circle me-4"></i>
-    <p class="minutes-song">${Math.floor(element.duration / 60)}:${Math.floor(
-      element.duration % 60
-    )} </p>
+  <div class="d-flex mt-2 align-items-center justify-content-center">
+  <div class="d-flex">
+  <button class="btn text-white plus">
+      <i class="bi bi-plus-circle"></i>
+  </button>
+  <button class="btn text-white check d-none">
+      <i class="bi bi-check-circle-fill text-green-spotyfy"></i>
+  </button>
+</div>
+    <p class="minutes-song mb-0">${Math.floor(
+      element.duration / 60
+    )}:${Math.floor(element.duration % 60)} </p>
     <i class="bi bi-three-dots text-white mx-2"></i>
   </div>`;
     divCanzone.addEventListener("click", uploadPlayer);
     songList.appendChild(divCanzone);
   });
   fetchAltro(arrayTracks[0].artist.id);
+  buttonFunction();
 };
 
 const getAlbum = function () {
