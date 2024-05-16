@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Spotify music player</title>
+        <link rel="stylesheet" href="./player.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+            integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+    </head>
+    <body>
+        <div class="music-player">
+            <div class="song-bar">
+                <div class="song-infos">
+                    <div class="image-container">
+                        <img src="./media/thumbnail.png" alt="" />
+                    </div>
+                    <div class="song-description">
+                        <p class="title">
+                            Watashitachi wa Sou Yatte Ikite Iku Jinshu na no
+                        </p>
+                        <p class="artist">Masaru Yokoyama</p>
+                    </div>
+                </div>
+                <div class="icons">
+                    <i class="fas fa-plus-circle"></i>
+                </div>
+            </div>
+            <div class="progress-controller">
+                <div class="control-buttons">
+                    <i class="fas fa-random"></i>
+                    <i class="fas fa-step-backward"></i>
+                    <i class="play-pause fas fa-play"></i>
+                    <i class="fas fa-step-forward"></i>
+                    <i class="fas fa-undo-alt"></i>
+                </div>
+                <div class="progress-container">
+                    <span>0:00</span>
+                    <div class="progress-bar">
+                        <div class="progress"></div>
+                    </div>
+                    <span></span>
+                </div>
+            </div>
+
+            <div class="other-features">
+                <i class="fas fa-list-ul"></i>
+                <i class="fas fa-desktop"></i>
+                <div class="volume-bar">
+                    <i class="fas fa-volume-down"></i>
+                    <input type="range" id="volume-control" class="progress-bar" min="0" max="1" step="0.1" value="1">
+                    
+                </div>
+                <i class="fas fa-expand-alt"></i>
+            </div>
+            <audio id="song">
+                <source src="https://cdns-preview-5.dzcdn.net/stream/c-5e1529c5e8bd52c8d5d04df256eb6cc9-15.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+    <script src="./player.js"></script>
+    
+    </body>
+</html>
