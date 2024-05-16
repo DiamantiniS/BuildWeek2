@@ -51,7 +51,7 @@ if (!albumId) {
 const altroDiArtista = function (obj) {
   const albumArtista = document.getElementById("album-artista");
   albumArtista.innerHTML = "";
-  for (let i = 0; i < 2; i++) {
+  for (let i = 0; i < 6; i++) {
     let cardAlbum = document.createElement("div");
     cardAlbum.setAttribute("style", "width: 10rem");
     cardAlbum.classList.add("card", "bg-dark", "me-2", "me-sm-4");
@@ -60,9 +60,9 @@ const altroDiArtista = function (obj) {
     class="card-img-top"
     alt="album"
   />
-  <div class="card-body">
-    <p class="card-text text-white">${obj.data[i].album.title}</p>
-    <p class="card-text text-white">ANNO USCITA</p>
+  <div class="card-body p-2">
+    <p class="card-text text-white m-0">${obj.data[i].album.title}</p>
+    <p class="card-text text-white"></p>
   </div>
   <button class="button" style="font-size: 3em">
     <i
@@ -105,6 +105,7 @@ const unpackAlbum = function (object) {
   const dataDiPubblicazione = object.release_date;
   const arrayTracks = object.tracks.data;
 
+  document.getElementById("artistNameHeader").innerHTML = autore
   document.querySelector("#hero-album img").setAttribute("src", coverAlbum);
   document.getElementById("titolo").innerHTML = titoloAlbum;
   document.querySelector("#info-album img").setAttribute("src", artistImg);
@@ -166,3 +167,23 @@ const getAlbum = function () {
 };
 
 getAlbum();
+
+//funzione per scroll
+let mainContainer = document.getElementById('main')
+let playHeader = document.getElementById('playHeader')
+let artistNameHeader = document.getElementById('artistNameHeader')
+let header = document.getElementById('header')
+mainContainer.addEventListener('scroll', function (e) {
+  let scroll = e.target.scrollTop;
+  console.log('scroll main =', scroll);       //260 
+  if (scroll > 312) {
+    playHeader.classList.add('d-sm-inline')
+    artistNameHeader.classList.add('d-sm-inline')
+    header.classList.add('bg-black')
+  } else {
+    playHeader.classList.remove('d-sm-inline')
+    artistNameHeader.classList.remove('d-sm-inline')
+    header.classList.remove('bg-black')
+  }
+})
+//

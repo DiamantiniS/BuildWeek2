@@ -172,20 +172,28 @@
         </div>
         <div class="col-12 col-sm-11 col-md-9 py-2 position-relative" id="main">
           <div
-            class="d-flex text-white align-items-center justify-content-sm-between position-sticky top-0"
+            class="d-flex text-white align-items-center justify-content-sm-between position-sticky top-0 z-3"
+            id="header"
           >
-            <div class="d-sm-flex d-none">
-              <button
-                class="rounded-circle bg-dark border-0 me-2 px-2 fs-4 opacity-75"
-              >
-                <p class="text-white mx-1 my-1 px-1">&lt;</p>
-              </button>
-              <button
-                class="rounded-circle bg-dark border-0 me-2 px-2 fs-4 opacity-75"
-              >
-                <p class="text-white mx-1 my-1 px-1">&gt;</p>
-              </button>
-            </div>
+          <div class="d-sm-flex align-items-center">
+            <button class="d-sm-none rounded-circle btn btn-dark me-2 fs-4 opacity-75">
+                <i class="bi bi-arrow-left text-white"></i>
+            </button>  
+            <button
+                class="rounded-circle bg-dark border-0 me-2 px-1 fs-4 opacity-75 d-none d-sm-block mb-1"
+            >
+            <i class="bi bi-chevron-left text-white p-1"></i>
+            </button>
+            <button
+                class="rounded-circle bg-dark border-0 me-2 px-1 fs-4 opacity-75 d-none d-md-block mb-1"
+            >
+            <i class="bi bi-chevron-right text-white p-1"></i>
+            </button>
+            </button>
+            <button id="playHeader" class="btn text-green-spotyfy d-none fs-1 p-0 me-2"><i class="bi bi-play-circle-fill"></i></button>
+            <h1 id="artistNameHeader" class="text-white d-none m-0">Nome Artista (artist -> name:...)</h1>
+
+        </div>
             <div class="d-flex align-items-center gap-2">
               <button
                 class="d-none d-sm-block rounded-circle bg-dark border-0 text-white fs-5 opacity-75"

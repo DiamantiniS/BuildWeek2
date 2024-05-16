@@ -134,7 +134,7 @@ let header = document.getElementById('header')
 mainContainer.addEventListener('scroll', function (e) {
   let scroll = e.target.scrollTop;
   console.log('scroll main =', scroll);       //260 
-  if (scroll > 312) {
+  if (scroll > 600) {
     playHeader.classList.add('d-sm-inline')
     artistNameHeader.classList.add('d-sm-inline')
     header.classList.add('bg-black')
