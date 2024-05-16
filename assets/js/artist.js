@@ -42,10 +42,25 @@ recomendedPlaylist();
 
 const addressBarContent = new URLSearchParams(location.search);
 let artistId = addressBarContent.get("artistId");
-console.log(artistId);
 if (!artistId) {
   artistId = "412";
 }
+
+// FUNZIONE PER USARE IL PLAYER
+
+const artistPlayer = function () {
+  const srcPlayer = document.querySelector("#song source");
+  const imgPlayer = document.querySelector(".image-container img");
+  const tagAudio = document.getElementById("song");
+  const titoloPlayer = document.querySelector(".title");
+  const artistaPlayer = document.querySelector(".artist");
+  console.log(this);
+  srcPlayer.src = this.getAttribute("id");
+  imgPlayer.src = this.querySelector("img").getAttribute("src");
+  titoloPlayer.innerText = this.querySelector("h4").innerText;
+  artistaPlayer.innerText = this.getAttribute("title");
+  tagAudio.load();
+};
 
 // MAIN PAGINA ARTISTI
 
@@ -61,7 +76,6 @@ const unpackArtist = function (object) {
   indirizzoTracks = tracklistUrl;
   console.log("artist", object);
 
-  console.log(nomeArtista);
   document.querySelector("#container-overImg h1").innerHTML = nomeArtista;
   document.getElementById("artistNameHeader").innerHTML = nomeArtista;
   document.getElementsByTagName("title")[0].innerHTML =
@@ -101,15 +115,18 @@ const unpackTracks = function (object) {
   const divPopolari = document.querySelector("#popTrack .row.my-1");
   divPopolari.innerHTML = "";
   for (let i = 0; i < displayedSongs; i++) {
-    object.data[i];
-    divPopolari.innerHTML += `
+    const divBrano = document.createElement("div");
+    divBrano.classList.add("d-flex", "justify-content-between", "mt-3");
+    divBrano.setAttribute("id", `${object.data[i].preview}`);
+    divBrano.setAttribute("title", `${object.data[i].artist.name}`);
+    divBrano.innerHTML = `
     <div class="col-1 d-flex align-items-center justify-content-center">
         <p class="m-0">${i + 1}</p>
     </div>
     <div class="col-10 d-flex  mb-1">
         <img src="${object.data[i].album.cover_small}" alt="img album">
         <div class="ms-3">
-            <h4 class="m-0">${object.data[i].album.title}</h4>
+            <h4 class="m-0">${object.data[i].title}</h4>
             <p class="m-0 opacity-75">${object.data[i].rank}</p>
         </div>
     </div>
@@ -118,6 +135,8 @@ const unpackTracks = function (object) {
     </div>
     `;
     console.log(object.data[i]);
+    divBrano.addEventListener("click", artistPlayer);
+    divPopolari.appendChild(divBrano);
   }
 };
 
