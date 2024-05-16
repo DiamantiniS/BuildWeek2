@@ -16,6 +16,14 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
     <link rel="stylesheet" href="./assets/css/circular-font.css" />
+    <link rel="stylesheet" href="./mediaplayer/player.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <style>
       #titolo {
         font-size: 3rem;
@@ -391,11 +399,73 @@
         </div>
       </div>
     </div>
+    <!-- FOOTER PLAYER -->
+    <footer>
+      <div class="music-player">
+        <div class="song-bar">
+          <div class="song-infos">
+            <div class="image-container">
+              <img src="./media/thumbnail.png" alt="song thumbnail" />
+            </div>
+            <div class="song-description">
+              <p class="title">
+                Watashitachi wa Sou Yatte Ikite Iku Jinshu na no
+              </p>
+              <p class="artist">Masaru Yokoyama</p>
+            </div>
+          </div>
+          <div class="icons">
+            <i class="fas fa-plus-circle"></i>
+          </div>
+        </div>
+        <div class="progress-controller">
+          <div class="control-buttons">
+            <i class="fas fa-random"></i>
+            <i class="fas fa-step-backward"></i>
+            <i class="play-pause fas fa-play"></i>
+            <i class="fas fa-step-forward"></i>
+            <i class="fas fa-undo-alt"></i>
+          </div>
+          <div class="progress-container">
+            <span>0:00</span>
+            <div class="progress-bar">
+              <div class="progress"></div>
+            </div>
+            <span></span>
+          </div>
+        </div>
+
+        <div class="other-features">
+          <i class="fas fa-list-ul"></i>
+          <i class="fas fa-desktop"></i>
+          <div class="volume-bar">
+            <i class="fas fa-volume-down"></i>
+            <input
+              type="range"
+              id="volume-control"
+              class="progress-bar"
+              min="0"
+              max="1"
+              step="0.1"
+              value="1"
+            />
+          </div>
+          <i class="fas fa-expand-alt"></i>
+        </div>
+        <audio id="song">
+          <source
+            src="https://cdns-preview-8.dzcdn.net/stream/c-8a0e9b83879ad692414407cf13cd5ec0-9.mp3"
+            type="audio/mpeg"
+          />
+        </audio>
+      </div>
+    </footer>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
     <script src="./assets/js/album.js"></script>
+    <script src="./mediaplayer/player.js"></script>
   </body>
 </html>
