@@ -116,7 +116,12 @@ const unpackTracks = function (object) {
   divPopolari.innerHTML = "";
   for (let i = 0; i < displayedSongs; i++) {
     const divBrano = document.createElement("div");
-    divBrano.classList.add("d-flex", "justify-content-between", "mt-3");
+    divBrano.classList.add(
+      "d-flex",
+      "justify-content-between",
+      "mt-3",
+      "canzone"
+    );
     divBrano.setAttribute("id", `${object.data[i].preview}`);
     divBrano.setAttribute("title", `${object.data[i].artist.name}`);
     divBrano.innerHTML = `

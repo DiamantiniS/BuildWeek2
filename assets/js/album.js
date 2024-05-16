@@ -154,7 +154,12 @@ const unpackAlbum = function (object) {
   songList.innerHTML = "";
   arrayTracks.forEach((element, index) => {
     const divCanzone = document.createElement("div");
-    divCanzone.classList.add("d-flex", "justify-content-between", "mt-3");
+    divCanzone.classList.add(
+      "d-flex",
+      "justify-content-between",
+      "mt-3",
+      "canzone"
+    );
     divCanzone.setAttribute("id", `${element.preview}`);
     divCanzone.setAttribute("title", `${element.album.cover_small}`);
     divCanzone.innerHTML = `<div class="d-flex">
