@@ -13,30 +13,28 @@ body {
 }
 
 .music-player {
-    --primary-color: #ddd;
-    --secondary-color: #999;
+    --first-color: #ddd;
+    --second-color: #999;
     --green-color: #2d5;
     --padding: 1em;
     background-color: #111;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     position: relative;
-
     height: 7rem;
     padding: var(--padding);
-    color: var(--primary-color);
+    color: var(--first-color);
 }
 i{
-    color: var(--secondary-color);
+    color: var(--second-color);
 }
 i:hover{
-    color: var(--primary-color);
+    color: var(--first-color);
 }
 .song-bar {
     position: absolute;
     left: var(--padding);
-
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -76,7 +74,7 @@ i:hover{
     text-decoration: underline;
 }
 .artist{
-    color: var(--secondary-color);
+    color: var(--second-color);
 }
 .icons{
     display: flex;
@@ -89,7 +87,7 @@ i:hover{
     flex-direction: column;
     align-items: center;
     gap: 1.5em;
-    color: var(--secondary-color);
+    color: var(--second-color);
 }
 .control-buttons{
     display: flex;
@@ -99,7 +97,7 @@ i:hover{
 .play-pause{
     display: inline-block;
     padding: 1em;
-    background-color: var(--primary-color);
+    background-color: var(--first-color);
     color: #111;
     border-radius: 50%;
 }
@@ -125,7 +123,7 @@ i:hover{
     height: 100%;
     width: 0%;
     border-radius: 10px;
-    background-color: var(--secondary-color);
+    background-color: var(--second-color);
 }
 .progress-bar:hover .progress{
     background-color: var(--green-color);
@@ -138,7 +136,7 @@ i:hover{
     height: var(--size);
     right: 0;
     border-radius: 50%;
-    background-color: var(--primary-color);
+    background-color: var(--first-color);
     transform: translate(50%, calc(2px - 50%));
 }
 .other-features{
@@ -160,7 +158,7 @@ i:hover{
     flex: 1; 
     height: 4px; 
     border-radius: 10px; 
-    background-color: var(--secondary-color); 
+    background-color: var(--second-color); 
 }
 
 .volume-bar input[type="range"] {
@@ -168,7 +166,7 @@ i:hover{
     height: 4px; 
     -webkit-appearance: none; 
     appearance: none;
-    background-color:var(--secondary-color); 
+    background-color:var(--second-color); 
     outline: none; 
     position: relative; 
     z-index: 2; 
@@ -180,7 +178,7 @@ i:hover{
     width: 12px; 
     height: 12px; 
     border-radius: 50%; 
-    background-color: var(--primary-color); 
+    background-color: var(--first-color); 
     position: relative; 
     z-index: 3; 
 }
@@ -188,7 +186,7 @@ i:hover{
     width: 12px; 
     height: 12px; 
     border-radius: 50%; 
-    background-color: var(--primary-color); 
+    background-color: var(--first-color); 
     cursor: pointer; 
     position: relative;
     z-index: 3;
