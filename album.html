@@ -1,311 +1,291 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Spotify - Album</title>
-    <link rel="stylesheet" href="./assets/css/circular-font.css" />
-    <link rel="stylesheet" href="./assets/css/app.css" />
-    <link
-      rel="icon"
-      href="./assets/imgs/logo_circular_green.svg"
-      type="image/x-icon"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
-    <link rel="stylesheet" href="./assets/css/circular-font.css" />
-    <link rel="stylesheet" href="./mediaplayer/player.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="./mediaplayer/mediaquery.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <style>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Spotify - Album</title>
+  <link rel="stylesheet" href="./assets/css/circular-font.css" />
+  <link rel="stylesheet" href="./assets/css/app.css" />
+  <link rel="icon" href="./assets/imgs/logo_circular_green.svg" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./mediaplayer/player.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+  <style>
+    #titolo {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    #main {
+      overflow: auto;
+      border-radius: 2em;
+      height: 86vh;
+
+    }
+
+    #main::-webkit-scrollbar {
+      width: 12px;
+    }
+
+    #main::-webkit-scrollbar-thumb {
+      background-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .card {
+      position: relative;
+    }
+
+    .button {
+      display: none;
+      position: absolute;
+      bottom: 40%;
+      left: 80%;
+      transform: translateX(-50%);
+      border: none;
+      cursor: pointer;
+      background-color: transparent;
+    }
+
+    .card:hover .button {
+      display: block;
+    }
+
+    @media screen and (max-width: 577px) {
       #titolo {
-        font-size: 3rem;
-        font-weight: bold;
+        font-size: 2rem;
       }
 
-      #main {
-        overflow: auto;
-        border-radius: 2em;
+      #img-album {
+        width: 22rem !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
       }
-      #main::-webkit-scrollbar {
-        width: 12px;
-      }
-      #main::-webkit-scrollbar-thumb {
-        background-color: rgba(255, 255, 255, 0.4);
-      }
+    }
+  </style>
+</head>
 
-      .card {
-        position: relative;
-      }
-
-      .button {
-        display: none;
-        position: absolute;
-        bottom: 40%;
-        left: 80%;
-        transform: translateX(-50%);
-        border: none;
-        cursor: pointer;
-        background-color: transparent;
-      }
-
-      .card:hover .button {
-        display: block;
-      }
-
-      @media screen and (max-width: 577px) {
-        #titolo {
-          font-size: 2rem;
-        }
-        #img-album {
-          width: 22rem !important;
-          margin-left: auto !important;
-          margin-right: auto !important;
-        }
-      }
-    </style>
-  </head>
-  <body class="bg-black vh-100 text-white">
-    <div class="container-fluid px-3 px-sm-4 pt-2">
-      <div class="row">
-        <div class="col-12 col-sm-1 col-md-3">
-          <div class="row g-2">
-            <div class="col-12" id="nav">
-              <ul
-                class="ps-0 pt-2 d-flex justify-content-around d-sm-block mb-2"
-              >
-                <li class="list-group-item pt-2 ms-2">
-                  <a
-                    href="./index.html"
-                    class="text-white text-decoration-none d-flex flex-column align-items-center flex-sm-row opacity-75"
-                    ><img src="./assets/imgs/home.svg" /><span
-                      class="d-block d-sm-none d-md-inline ms-3"
-                      >Home</span
-                    ></a
-                  >
-                </li>
-                <li class="list-group-item pt-2 ms-2">
-                  <a
-                    href="./cerca.html"
-                    class="text-white text-decoration-none d-flex flex-column align-items-center flex-sm-row opacity-75"
-                    ><img src="./assets/imgs/searchUnselected.svg" /><span
-                      class="d-block d-sm-none d-md-inline ms-3"
-                      >Cerca</span
-                    ></a
-                  >
-                </li>
-                <li class="list-group-item pt-2 ms-2">
-                  <a
-                    href="#"
-                    class="text-white text-decoration-none d-flex flex-column align-items-center flex-sm-row opacity-75"
-                    ><img src="./assets/imgs/libraryExpand.svg" /><span
-                      class="d-block d-sm-none d-md-inline ms-3"
-                      >La mia libreria</span
-                    ></a
-                  >
-                </li>
-              </ul>
-            </div>
-            <!-- PLAYLIST CONSIGLIATE -->
-            <div
-              class="col-12 bg-dark d-none d-sm-block mb-2"
-              id="div-playlist"
-            ></div>
+<body class="bg-black text-white">
+  <div class="container-fluid p-0 px-sm-4">
+    <div class="row pt-sm-3 m-0">
+      <div id="navbar" class="col-12 col-sm-1 col-md-3 p-0">
+        <div class="row g-2">
+          <div class="col-12 p-0" id="nav">
+            <ul class="ps-2 d-flex justify-content-around d-sm-block my-2">
+              <li class="list-group-item pt-2">
+                <a href="./index.html"
+                  class="text-white text-decoration-none d-flex flex-column align-items-center flex-sm-row opacity-75"><img
+                    src="./assets/imgs/home.svg" /><span class="d-block d-sm-none d-md-inline ms-md-3">Home</span></a>
+              </li>
+              <li class="list-group-item pt-2">
+                <a href="./cerca.html"
+                  class="text-white text-decoration-none d-flex flex-column align-items-center flex-sm-row opacity-75"><img
+                    src="./assets/imgs/searchUnselected.svg" /><span
+                    class="d-block d-sm-none d-md-inline ms-md-3">Cerca</span></a>
+              </li>
+              <li class="list-group-item pt-2">
+                <a href="#"
+                  class="text-white text-decoration-none d-flex flex-column align-items-center flex-sm-row opacity-75"><img
+                    src="./assets/imgs/libraryExpand.svg" /><span class="d-block d-sm-none d-md-inline ms-md-3">La mia
+                    libreria</span></a>
+              </li>
+            </ul>
+          </div>
+          <!-- PLAYLIST CONSIGLIATE -->
+          <div class="col-12 bg-dark d-none d-sm-block mb-2" id="div-playlist">
           </div>
         </div>
-        <div class="col-12 col-sm-11 col-md-9 py-2 position-relative" id="main">
-          <div
-            class="d-flex text-white align-items-center justify-content-sm-between position-sticky top-0"
-          >
-            <div class="d-sm-flex d-none">
-              <button
-                class="rounded-circle bg-dark border-0 me-2 px-2 fs-4 opacity-75"
-              >
-                <a href="javascript:history.go(-1) "
-                  ><i
-                    class="fa-solid fa-angle-left text-white mx-1 my-1 px-1"
-                  ></i
-                ></a>
+      </div>
+      <div class="col-12 col-sm-11 col-md-9 pb-2 position-relative" id="main">
+        <header id="header"
+          class="bg-black d-flex text-white align-items-center justify-content-start position-sticky top-0 justify-content-sm-between px-2 pt-2 ps-sm-4 z-1">
+          <div class="d-sm-flex align-items-center">
+            <button class="d-sm-none rounded-circle btn btn-dark me-2 fs-4 opacity-75">
+              <i class="bi bi-arrow-left text-white"></i>
+            </button>
+            <button class="rounded-circle bg-dark border-0 me-2 px-1 fs-4 opacity-75 d-none d-sm-block mb-1">
+              <i class="fa-solid fa-angle-left text-white px-2"></i>
+            </button>
+            <button class="rounded-circle bg-dark border-0 me-2 px-1 fs-4 opacity-75 d-none d-md-block mb-1">
+              <i class="fa-solid fa-angle-right text-white px-2"></i>
+            </button>
+            <button id="playHeader" class="btn text-green-spotyfy d-none fs-1 p-0 me-2">
+              <i class="bi bi-play-circle-fill"></i>
+            </button>
+            <h1 id="artistNameHeader" class="text-white d-none m-0">
+            </h1>
+          </div>
+          <div class="d-none d-sm-flex align-items-center gap-2 mb-1">
+            <button class="d-none d-sm-block rounded-circle bg-dark border-0 text-white fs-5 opacity-75">
+              <i class="bi bi-bell"></i>
+            </button>
+            <p class="bg-danger rounded-circle m-0 px-2 text-white fs-5 border border-4 border-dark">
+              N
+            </p>
+          </div>
+        </header>
+        <!-------------- inizio album     -->
+        <div class="d-flex pt-0 pt-sm-5 flex-column flex-sm-row" id="hero-album">
+          <img src="./assets/imgs/main/image-1.jpg" alt="album" style="width: 11rem" class="m-3" id="img-album" />
+          <div>
+            <p class="d-none d-sm-block">Album</p>
+            <p id="titolo">TITOLO</p>
+            <div class="d-flex align-items-center mt-3" id="info-album">
+              <img src="#" alt="artist pic" class="me-1 rounded-circle" style="width: 2em" />
+              <p class="mb-0">anno album</p>
+            </div>
+          </div>
+        </div>
+        <!------inizio player sotto album desktop-->
+        <div class="d-flex justify-content-between ms-3 d-none d-sm-flex">
+          <div class="mt-4 d-flex align-items-center">
+            <i class="bi bi-play-circle-fill text-green-spotyfy" style="font-size: 4em"></i>
+            <div class="d-flex align-content-center">
+              <button class="btn text-white plus">
+                <i class="bi bi-plus-circle fs-3"></i>
               </button>
-              <button
-                class="rounded-circle bg-dark border-0 me-2 px-2 fs-4 opacity-75"
-              >
-                <a href="javascript:history.go(1) "
-                  ><i
-                    class="fa-solid fa-angle-right text-white mx-1 my-1 px-1"
-                  ></i
-                ></a>
+              <button class="btn text-white check d-none">
+                <i class="bi bi-check-circle-fill text-green-spotyfy fs-3"></i>
               </button>
             </div>
-            <div class="d-flex align-items-center gap-2">
-              <button
-                class="d-none d-sm-block rounded-circle bg-dark border-0 text-white fs-5 opacity-75"
-              >
-                <i class="bi bi-bell fs-4"></i>
-              </button>
-              <p
-                class="bg-danger rounded-circle m-0 px-2 text-white fs-5 border border-4 border-dark d-none d-sm-block"
-              >
-                N
-              </p>
-            </div>
+            <i class="bi bi-three-dots text-white fs-3 ms-4"></i>
           </div>
-          <!-------------- inizio album     -->
-          <div
-            class="d-flex pt-0 pt-sm-5 flex-column flex-sm-row"
-            id="hero-album"
-          >
-            <img
-              src="#"
-              alt="album"
-              style="width: 11rem"
-              class="m-3"
-              id="img-album"
-            />
-            <div>
-              <p class="d-none d-sm-block"></p>
-              <p id="titolo"></p>
-              <div class="d-flex align-items-center mt-3" id="info-album">
-                <img
-                  src="#"
-                  alt="artist pic"
-                  class="me-1 rounded-circle"
-                  style="width: 2em"
-                />
-                <p class="mb-0">anno album</p>
-              </div>
-            </div>
+          <div class="d-flex mt-5">
+            <p>Elenco</p>
+            <span class="ms-3"><i class="bi bi-list-ul"></i></span>
           </div>
-          <!------inizio player sotto album desktop-->
-          <div class="d-flex justify-content-between ms-3 d-none d-sm-flex">
-            <div class="mt-4 d-flex align-items-center">
-              <i
-                class="bi bi-play-circle-fill text-green-spotyfy"
-                style="font-size: 4em"
-              ></i>
-              <div class="d-flex align-content-center">
-                <button class="btn text-white plus">
-                  <i class="bi bi-plus-circle fs-3"></i>
-                </button>
-                <button class="btn text-white check d-none">
-                  <i
-                    class="bi bi-check-circle-fill text-green-spotyfy fs-3"
-                  ></i>
-                </button>
-              </div>
-              <i class="bi bi-three-dots text-white fs-3 ms-4"></i>
-            </div>
-            <div class="d-flex mt-5">
-              <p>Elenco</p>
-              <span class="ms-3"><i class="bi bi-list-ul"></i></span>
-            </div>
+        </div>
+        <!------- inizio player sotto album mobile-->
+        <div class="d-flex justify-content-between align-items-center d-sm-none mt-2">
+          <div>
+            <i class="bi bi-heart fs-2"></i>
+            <i class="bi bi-arrow-down-circle fs-2 mx-4"></i>
+            <i class="bi bi-three-dots-vertical fs-2"></i>
           </div>
-          <!------- inizio player sotto album mobile-->
-          <div
-            class="d-flex justify-content-between align-items-center d-sm-none mt-2"
-          >
-            <div>
-              <i class="bi bi-heart fs-2"></i>
-              <i class="bi bi-arrow-down-circle fs-2 mx-4"></i>
-              <i class="bi bi-three-dots-vertical fs-2"></i>
-            </div>
-            <div class="d-flex align-items-center">
-              <i class="bi bi-shuffle fs-2 me-3"></i>
-              <i
-                class="bi bi-play-circle-fill text-green-spotyfy"
-                style="font-size: 3em"
-              ></i>
-            </div>
+          <div class="d-flex align-items-center">
+            <i class="bi bi-shuffle fs-2 me-3"></i>
+            <i class="bi bi-play-circle-fill text-green-spotyfy" style="font-size: 3em"></i>
           </div>
-          <!------inizio head lista  -->
-          <div
-            class="d-flex justify-content-between mt-3 ms-4 border-bottom border-white d-none d-sm-flex"
-          >
+        </div>
+        <!------inizio head lista  -->
+        <div class="d-flex justify-content-between mt-3 ms-4 border-bottom border-white d-none d-sm-flex">
+          <div class="d-flex">
+            <p>#</p>
+            <p class="ms-2">Titolo</p>
+          </div>
+          <div>
+            <i class="bi bi-clock me-5"></i>
+          </div>
+        </div>
+        <!-------- lista canzoni-->
+        <div id="list-songs">
+          <div class="d-flex justify-content-between mt-3">
             <div class="d-flex">
-              <p>#</p>
-              <p class="ms-2">Titolo</p>
-            </div>
-            <div>
-              <i class="bi bi-clock me-5"></i>
-            </div>
-          </div>
-          <!-------- lista canzoni-->
-          <div id="list-songs"></div>
-          <!----- sottotitoli di coda -->
-          <div class="mt-3">
-            <p class="m-0" id="album-date">data</p>
-          </div>
-          <!----------- inizio altro di autore-->
-          <div class="d-flex justify-content-between align-items-center mt-5">
-            <p>ALTRO DI ARTISTA</p>
-            <p>Vedi discografia</p>
-          </div>
-          <div class="d-flex" id="album-artista"></div>
-          <div class="mt-5 d-none d-sm-block">
-            <div class="container border-bottom border-white pb-3">
-              <div class="row-cols-6 d-flex justify-content-around">
-                <div class="col">
-                  <p>Azienda</p>
-                  <p>Chi siamo</p>
-                  <p>Opportunità di lavoro</p>
-                  <p>For the Record</p>
-                </div>
-                <div class="col">
-                  <p>Community</p>
-                  <p>Per artisti</p>
-                  <p>Sviluppatori</p>
-                  <p>Pubblicità</p>
-                  <p>Investitori</p>
-                  <p>Venditori</p>
-                </div>
-                <div class="col">
-                  <p>Link utili</p>
-                  <p>Assistenza</p>
-                  <p>App per cellulare gratuita</p>
-                  <p>Diritti del consumatore</p>
-                </div>
-                <div class="col">
-                  <p>Piani spotify</p>
-                  <p>Premium Individual</p>
-                  <p>Premium Duo</p>
-                  <p>Premium Family</p>
-                  <p>Premium Student</p>
-                  <p>Spotify Free</p>
-                </div>
-                <div class="col d-flex ms-5">
-                  <i class="bi bi-instagram fs-3 me-3"></i>
-                  <i class="bi bi-twitter fs-3 me-3"></i>
-                  <i class="bi bi-facebook fs-3"></i>
-                </div>
+              <div class="px-4 py-3 number-song">1</div>
+              <div>
+                <p class="fs-4 m-0 name-song">TITOLO</p>
+                <p class="name-artist">ARTISTA</p>
               </div>
             </div>
-            <div>
-              <div class="container my-5 d-none d-sm-block">
-                <div class="row">
-                  <div class="col d-flex justify-content-around">
-                    <p class="me-3">Informazioni legali</p>
-                    <p class="me-3">Sicurezza e Centro sulla privacy</p>
-                    <p class="me-3">Informativa sulla privacy</p>
-                    <p class="me-3">Impostazioni cookie</p>
-                    <p class="me-3">Info annunci</p>
-                    <p class="me-3">Accessibilità</p>
-                    <p class="ms-4">&copy; Spotify AB</p>
-                  </div>
+            <div class="d-flex mt-2 d-none d-sm-flex">
+              <i class="bi bi-plus-circle me-4"></i>
+              <p class="minutes-song"></p>
+              <i class="bi bi-three-dots text-white mx-2"></i>
+            </div>
+            <i class="bi bi-three-dots-vertical fs-2 d-sm-none"></i>
+          </div>
+        </div>
+        <!----- sottotitoli di coda -->
+        <div class="mt-3">
+          <p class="m-0" id="album-date">data</p>
+          <p class="m-0">produzione</p>
+          <p class="m-0">&copy; Universal music italia</p>
+        </div>
+        <!----------- inizio altro di autore-->
+        <div class="d-flex justify-content-between align-items-center mt-5">
+          <p>ALTRO DI ARTISTA</p>
+          <p>Vedi discografia</p>
+        </div>
+
+        <div class="d-flex" id="album-artista">
+          <div class="card me-2 me-sm-4 bg-transparent" style="width: 10rem">
+            <img src="./assets/imgs/main/image-10.jpg" class="card-img-top" alt="album" />
+            <div class="card-body">
+              <p class="card-text text-white">TITOLO ALBUM</p>
+              <p class="card-text text-white">ANNO USCITA</p>
+            </div>
+            <button class="button" style="font-size: 3em">
+              <i class="bi bi-play-circle-fill text-green-spotyfy bg-black rounded-circle"></i>
+            </button>
+          </div>
+
+          <div class="card me-2 me-sm-4 bg-transparent" style="width: 10rem">
+            <img src="./assets/imgs/main/image-10.jpg" class="card-img-top" alt="album" />
+            <div class="card-body">
+              <p class="card-text text-white">TITOLO ALBUM</p>
+              <p class="card-text text-white">ANNO USCITA</p>
+            </div>
+            <button class="button" style="font-size: 3em">
+              <i class="bi bi-play-circle-fill text-green-spotyfy bg-black rounded-circle"></i>
+            </button>
+          </div>
+        </div>
+        <div class="mt-5 d-none d-sm-block">
+          <div class="container border-bottom border-white pb-3">
+            <div class="row-cols-6 d-flex justify-content-around">
+              <div class="col">
+                <p>Azienda</p>
+                <p>Chi siamo</p>
+                <p>Opportunità di lavoro</p>
+                <p>For the Record</p>
+              </div>
+              <div class="col">
+                <p>Community</p>
+                <p>Per artisti</p>
+                <p>Sviluppatori</p>
+                <p>Pubblicità</p>
+                <p>Investitori</p>
+                <p>Venditori</p>
+              </div>
+              <div class="col">
+                <p>Link utili</p>
+                <p>Assistenza</p>
+                <p>App per cellulare gratuita</p>
+                <p>Diritti del consumatore</p>
+              </div>
+              <div class="col">
+                <p>Piani spotify</p>
+                <p>Premium Individual</p>
+                <p>Premium Duo</p>
+                <p>Premium Family</p>
+                <p>Premium Student</p>
+                <p>Spotify Free</p>
+              </div>
+              <div class="col d-flex ms-5">
+                <i class="bi bi-instagram fs-3 me-3"></i>
+                <i class="bi bi-twitter fs-3 me-3"></i>
+                <i class="bi bi-facebook fs-3"></i>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="container my-5 d-none d-sm-block">
+              <div class="row">
+                <div class="col d-flex justify-content-around">
+                  <p class="me-3">Informazioni legali</p>
+                  <p class="me-3">Sicurezza e Centro sulla privacy</p>
+                  <p class="me-3">Informativa sulla privacy</p>
+                  <p class="me-3">Impostazioni cookie</p>
+                  <p class="me-3">Info annunci</p>
+                  <p class="me-3">Accessibilità</p>
+                  <p class="ms-4">&copy; Spotify AB</p>
                 </div>
               </div>
             </div>
@@ -313,73 +293,62 @@
         </div>
       </div>
     </div>
-    <!-- FOOTER PLAYER -->
-    <footer>
-      <div class="music-player">
-        <div class="song-bar">
-          <div class="song-infos">
-            <div class="image-container">
-              <img
-                src="./mediaplayer/media/thumbnail.png"
-                alt="song thumbnail"
-              />
-            </div>
-            <div class="song-description">
-              <p class="title">
-                Watashitachi wa Sou Yatte Ikite Iku Jinshu na no
-              </p>
-              <p class="artist">Masaru Yokoyama</p>
-            </div>
+  </div>
+  <!-- FOOTER PLAYER -->
+  <footer>
+    <div class="music-player">
+      <div class="song-bar">
+        <div class="song-infos">
+          <div class="image-container">
+            <img src="./mediaplayer/media/thumbnail.png" alt="song thumbnail" />
           </div>
-          <div class="icons">
-            <i class="fas fa-plus-circle"></i>
+          <div class="song-description">
+            <p class="title">
+              Watashitachi wa Sou Yatte Ikite Iku Jinshu na no
+            </p>
+            <p class="artist">Masaru Yokoyama</p>
           </div>
         </div>
-        <div class="progress-controller">
-          <div class="control-buttons">
-            <i class="fas fa-random"></i>
-            <i class="fas fa-step-backward"></i>
-            <i class="play-pause fas fa-play"></i>
-            <i class="fas fa-step-forward"></i>
-            <i class="fas fa-undo-alt"></i>
-          </div>
-          <div class="progress-container">
-            <span>0:00</span>
-            <div class="progress-bar">
-              <div class="progress"></div>
-            </div>
-            <span></span>
-          </div>
+        <div class="icons">
+          <i class="fas fa-plus-circle"></i>
         </div>
-
-        <div class="other-features">
-          <i class="fas fa-list-ul"></i>
-          <i class="fas fa-desktop"></i>
-          <div class="volume-bar">
-            <i class="fas fa-volume-down"></i>
-            <input
-              type="range"
-              id="volume-control"
-              class="progress-bar"
-              min="0"
-              max="1"
-              step="0.1"
-              value="1"
-            />
-          </div>
-          <i class="fas fa-expand-alt"></i>
-        </div>
-        <audio id="song">
-          <source src="./mediaplayer/media/Go-NEFFEX.mp3" type="audio/mpeg" />
-        </audio>
       </div>
-    </footer>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
-    <script src="./assets/js/album.js"></script>
-    <script src="./mediaplayer/player.js"></script>
-  </body>
+      <div class="progress-controller">
+        <div class="control-buttons">
+          <i class="fas fa-random"></i>
+          <i class="fas fa-step-backward"></i>
+          <i class="play-pause fas fa-play"></i>
+          <i class="fas fa-step-forward"></i>
+          <i class="fas fa-undo-alt"></i>
+        </div>
+        <div class="progress-container">
+          <span>0:00</span>
+          <div class="progress-bar">
+            <div class="progress"></div>
+          </div>
+          <span></span>
+        </div>
+      </div>
+
+      <div class="other-features">
+        <i class="fas fa-list-ul"></i>
+        <i class="fas fa-desktop"></i>
+        <div class="volume-bar">
+          <i class="fas fa-volume-down"></i>
+          <input type="range" id="volume-control" class="progress-bar" min="0" max="1" step="0.1" value="1" />
+        </div>
+        <i class="fas fa-expand-alt"></i>
+      </div>
+      <audio id="song">
+        <source src="./mediaplayer/media/Go-NEFFEX.mp3" type="audio/mpeg" />
+      </audio>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="./assets/js/album.js"></script>
+  <script src="./mediaplayer/player.js"></script>
+</body>
+
 </html>

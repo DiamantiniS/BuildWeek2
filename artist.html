@@ -1,288 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Spotify - Artist</title>
-    <link rel="stylesheet" href="./assets/css/circular-font.css" />
-    <link rel="stylesheet" href="./assets/css/app.css" />
-    <link
-      rel="icon"
-      href="./assets/imgs/logo_circular_green.svg"
-      type="image/x-icon"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
-    <link rel="stylesheet" href="./assets/css/circular-font.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="./mediaplayer/player.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="./mediaplayer/mediaquery.css" />
-  </head>
-  <body class="bg-black text-white">
-    <div class="container-fluid p-0 px-sm-4">
-      <div class="row pt-sm-3 m-0">
-        <div id="navbar" class="col-12 col-sm-1 col-md-3 p-0">
-          <div class="row g-2">
-            <div class="col-12 p-0" id="nav">
-              <ul class="ps-2 d-flex justify-content-around d-sm-block my-2">
-                <li class="list-group-item pt-2">
-                  <a
-                    href="./index.html"
-                    class="text-white text-decoration-none d-flex flex-column align-items-center flex-sm-row opacity-75"
-                    ><img src="./assets/imgs/home.svg" /><span
-                      class="d-block d-sm-none d-md-inline ms-md-3"
-                      >Home</span
-                    ></a
-                  >
-                </li>
-                <li class="list-group-item pt-2">
-                  <a
-                    href="./cerca.html"
-                    class="text-white text-decoration-none d-flex flex-column align-items-center flex-sm-row opacity-75"
-                    ><img src="./assets/imgs/searchUnselected.svg" /><span
-                      class="d-block d-sm-none d-md-inline ms-md-3"
-                      >Cerca</span
-                    ></a
-                  >
-                </li>
-                <li class="list-group-item pt-2">
-                  <a
-                    href="#"
-                    class="text-white text-decoration-none d-flex flex-column align-items-center flex-sm-row opacity-75"
-                    ><img src="./assets/imgs/libraryExpand.svg" /><span
-                      class="d-block d-sm-none d-md-inline ms-md-3"
-                      >La mia libreria</span
-                    ></a
-                  >
-                </li>
-              </ul>
-            </div>
-            <!-- PLAYLIST -->
-            <div
-              class="col-12 bg-dark d-none d-sm-block"
-              id="div-playlist"
-            ></div>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Spotify - Artist</title>
+  <link rel="stylesheet" href="./assets/css/circular-font.css" />
+  <link rel="stylesheet" href="./assets/css/app.css" />
+  <link rel="icon" href="./assets/imgs/logo_circular_green.svg" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./mediaplayer/player.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="bg-black text-white">
+  <div class="container-fluid p-0 px-sm-4">
+    <div class="row pt-sm-3 m-0">
+      <div id="navbar" class="col-12 col-sm-1 col-md-3 p-0">
+        <div class="row g-2">
+          <div class="col-12 p-0" id="nav">
+            <ul class="ps-2 d-flex justify-content-around d-sm-block my-2">
+              <li class="list-group-item pt-2">
+                <a href="./index.html"
+                  class="text-white text-decoration-none d-flex flex-column align-items-center flex-sm-row opacity-75"><img
+                    src="./assets/imgs/home.svg" /><span class="d-block d-sm-none d-md-inline ms-md-3">Home</span></a>
+              </li>
+              <li class="list-group-item pt-2">
+                <a href="./cerca.html"
+                  class="text-white text-decoration-none d-flex flex-column align-items-center flex-sm-row opacity-75"><img
+                    src="./assets/imgs/searchUnselected.svg" /><span
+                    class="d-block d-sm-none d-md-inline ms-md-3">Cerca</span></a>
+              </li>
+              <li class="list-group-item pt-2">
+                <a href="#"
+                  class="text-white text-decoration-none d-flex flex-column align-items-center flex-sm-row opacity-75"><img
+                    src="./assets/imgs/libraryExpand.svg" /><span class="d-block d-sm-none d-md-inline ms-md-3">La mia
+                    libreria</span></a>
+              </li>
+            </ul>
+          </div>
+          <!-- PLAYLIST -->
+          <div class="col-12 bg-dark d-none d-sm-block" id="div-playlist">
           </div>
         </div>
-        <div
-          id="main"
-          class="col-12 col-sm-11 col-md-9 px-2 ps-sm-3 position-relative"
-        >
-          <header
-            id="header"
-            class="d-flex text-white align-items-center justify-content-start position-sticky top-0 justify-content-sm-between px-2 pt-2 ps-sm-4 z-1"
-          >
-            <div class="d-sm-flex align-items-center">
-              <button
-                class="d-sm-none rounded-circle btn btn-dark me-2 fs-4 opacity-75"
-              >
-                <i class="bi bi-arrow-left text-white"></i>
-              </button>
-              <button
-                class="rounded-circle bg-dark border-0 me-2 px-1 fs-4 opacity-75 d-none d-sm-block mb-1"
-              >
-                <a href="javascript:history.go(-1) "
-                  ><i class="fa-solid fa-angle-left text-white px-2"></i
-                ></a>
-              </button>
-              <button
-                class="rounded-circle bg-dark border-0 me-2 px-1 fs-4 opacity-75 d-none d-md-block mb-1"
-              >
-                <a href="javascript:history.go(1) "
-                  ><i class="fa-solid fa-angle-right text-white px-2"></i
-                ></a>
-              </button>
-              <button
-                id="playHeader"
-                class="btn text-green-spotyfy d-none fs-1 p-0 me-2"
-              >
-                <i class="bi bi-play-circle-fill"></i>
-              </button>
-              <h1 id="artistNameHeader" class="text-white d-none m-0">
-                Nome Artista (artist -> name:...)
-              </h1>
-            </div>
-            <div class="d-none d-sm-flex align-items-center gap-2 mb-1">
-              <button
-                class="d-none d-sm-block rounded-circle bg-dark border-0 text-white fs-5 opacity-75"
-              >
-                <i class="bi bi-bell"></i>
-              </button>
-              <p
-                class="bg-danger rounded-circle m-0 px-2 text-white fs-5 border border-4 border-dark"
-              >
-                N
-              </p>
-            </div>
-          </header>
-          <div id="imgContainer" class="z-n1 position-absolute top-0 start-0">
-            <div
-              id="imgGradient"
-              class="ps-sm-3 z-1 position-absolute top-0"
-            ></div>
-            <img
-              id="imgArtist"
-              class="ps-sm-3 object-fit-cover position-absolute top-0"
-              src="#"
-              alt="artist img"
-              crossorigin="anonymous"
-            />
+      </div>
+      <!-- MAIN -->
+      <div id="main" class="col-12 col-sm-11 col-md-9 px-2 ps-sm-3 position-relative">
+        <header id="header"
+          class="d-flex text-white align-items-center justify-content-start position-sticky top-0 justify-content-sm-between px-2 pt-2 ps-sm-4 z-1">
+          <div class="d-sm-flex align-items-center">
+            <button class="d-sm-none rounded-circle btn btn-dark me-2 fs-4 opacity-75">
+              <i class="bi bi-arrow-left text-white"></i>
+            </button>
+            <button class="rounded-circle bg-dark border-0 me-2 px-1 fs-4 opacity-75 d-none d-sm-block mb-1">
+              <i class="fa-solid fa-angle-left text-white px-2"></i>
+            </button>
+            <button class="rounded-circle bg-dark border-0 me-2 px-1 fs-4 opacity-75 d-none d-md-block mb-1">
+              <i class="fa-solid fa-angle-right text-white px-2"></i>
+            </button>
+            <button id="playHeader" class="btn text-green-spotyfy d-none fs-1 p-0 me-2">
+              <i class="bi bi-play-circle-fill"></i>
+            </button>
+            <h1 id="artistNameHeader" class="text-white d-none m-0">
+            </h1>
           </div>
+          <div class="d-none d-sm-flex align-items-center gap-2 mb-1">
+            <button class="d-none d-sm-block rounded-circle bg-dark border-0 text-white fs-5 opacity-75">
+              <i class="bi bi-bell"></i>
+            </button>
+            <p class="bg-danger rounded-circle m-0 px-2 text-white fs-5 border border-4 border-dark">
+              N
+            </p>
+          </div>
+        </header>
+        <div id="imgContainer" class="z-n1 position-absolute top-0 start-0">
+          <div id="imgGradient" class="ps-sm-3 z-1 position-absolute top-0"></div>
+          <div id="containerArtistImg">
+            <img id="imgArtist" class="ps-sm-3 object-fit-cover position-absolute top-0" src="#" alt="artist img"
+            crossorigin="anonymous" onload=""/>
+          </div>
+        </div>
 
-          <div class="px-2">
-            <div id="container-overImg">
-              <i
-                class="bi bi-patch-check-fill text-primary d-none d-sm-inline"
-              ></i>
-              <p class="d-none d-sm-inline taxt-white ms-1">
-                Artista Verificato
-              </p>
-              <h1 id="artistNameTitle" class="text-white"></h1>
+        <div class="px-2">
+          <div id="container-overImg">
+            <i class="bi bi-patch-check-fill text-primary d-none d-sm-inline"></i>
+            <p class="d-none d-sm-inline taxt-white ms-1">
+              Artista Verificato
+            </p>
+            <h1 id="artistNameTitle" class="text-white">
+            </h1>
+          </div>
+          <span id="listener-mth"></span>
+          <div id="playerMenu" class="d-flex flex-sm-row-reverse justify-content-between justify-content-sm-end gap-3">
+            <div class="d-flex align-items-center justify-content-between gap-3 mb-2">
+              <button class="btn btn-outline-secondary text-white d-sm-none">
+                Segui
+              </button>
+              <button class="btn btn-outline-secondary text-white rounded-pill px-3 py-1 d-sm-inline">
+                Segui
+              </button>
+              <button class="btn text-white d-sm-none">
+                <i class="bi bi-three-dots-vertical"></i>
+              </button>
+              <!--<i class="bi bi-three-dots"></i> orizzontali-->
+              <button class="btn text-white d-none d-sm-inline">
+                <i class="bi bi-three-dots"></i>
+              </button>
+              <!--<i class="bi bi-three-dots"></i> orizzontali-->
             </div>
-            <span id="listener-mth"></span>
-            <div
-              id="playerMenu"
-              class="d-flex flex-sm-row-reverse justify-content-between justify-content-sm-end gap-3"
-            >
-              <div
-                class="d-flex align-items-center justify-content-between gap-3 mb-2"
-              >
-                <button class="btn btn-outline-secondary text-white d-sm-none">
-                  Segui
-                </button>
-                <button
-                  class="btn btn-outline-secondary text-white rounded-pill px-3 py-1 d-sm-inline"
-                >
-                  Segui
-                </button>
-                <button class="btn text-white d-sm-none">
-                  <i class="bi bi-three-dots-vertical"></i>
-                </button>
-                <!--<i class="bi bi-three-dots"></i> orizzontali-->
-                <button class="btn text-white d-none d-sm-inline">
-                  <i class="bi bi-three-dots"></i>
-                </button>
-                <!--<i class="bi bi-three-dots"></i> orizzontali-->
-              </div>
-              <div class="d-flex gap-2 align-items-center">
-                <button
-                  id="shuffleBtn"
-                  class="btn text-white fs-2 p-0 opacity-75 d-sm-none"
-                >
-                  <i class="bi bi-shuffle"></i>
-                </button>
-                <button id="playPlayer" class="btn text-green-spotyfy">
-                  <i id="playBtn" class="bi bi-play-circle-fill"></i>
-                </button>
+            <div class="d-flex gap-2 align-items-center">
+              <button id="shuffleBtn" class="btn text-white fs-2 p-0 opacity-75 d-sm-none">
+                <i class="bi bi-shuffle"></i>
+              </button>
+              <button id="playPlayer" class="btn text-green-spotyfy">
+                <i id="playBtn" class="bi bi-play-circle-fill"></i>
+              </button>
+            </div>
+          </div>
+          <div>
+            <div id="favourites" class="d-flex align-items-center my-3 gap-3">
+              <button class="btn p-0 position-relative">
+                <img id="imgArtistSmall" class="rounded-circle"
+                  src="https://e-cdns-images.dzcdn.net/images/artist/1ab642216454f5e5e02c234f93af481c/56x56-000000-80-0-0.jpg"
+                  alt="artist icon" />
+                <!-- artist -> picture_samll:...-->
+              </button>
+              <div>
+                <h3 class="m-0">Brani che ti piacciono</h3>
               </div>
             </div>
-            <div>
-              <div id="favourites" class="d-flex align-items-center my-3 gap-3">
-                <button class="btn p-0 position-relative">
-                  <img
-                    id="imgArtistSmall"
-                    class="rounded-circle"
-                    src="#"
-                    alt="artist icon"
-                  />
-                  <!-- artist -> picture_samll:...-->
-                </button>
-                <div>
-                  <h3 class="m-0">Brani che ti piacciono</h3>
+            <!-- PIU' ASCOLTATE -->
+            <h2>Popolari</h2>
+            <div id="popTrack" class="container-fluid">
+              <div class="row my-1">
+                <div class="col-1 d-flex align-items-center justify-content-center">
+                  <p class="m-0">n°</p>
                 </div>
-              </div>
-              <!-- PIU' ASCOLTATE -->
-              <h2>Popolari</h2>
-              <div id="popTrack" class="container-fluid">
-                <div class="row my-1"></div>
+                <div class="col-10 d-flex">
+                  <img src="https://placehold.co/50" alt="img album" />
+                  <!-- album -> artist -> cover_small:... -->
+                  <div class="ms-3">
+                    <h4 class="m-0">"album -> title_short:..."</h4>
+                    <p class="m-0 opacity-75">"album -> rank:..."</p>
+                  </div>
+                </div>
+                <div class="col-1 d-flex align-items-center justify-content-center">
+                  <i class="bi bi-three-dots-vertical fs-4 opacity-75"></i>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- PLAYER -->
-    <footer>
-      <div class="music-player">
-        <div class="song-bar">
-          <div class="song-infos">
-            <div class="image-container">
-              <img
-                src="./mediaplayer/media/thumbnail.png"
-                alt="song thumbnail"
-              />
-            </div>
-            <div class="song-description">
-              <p class="title">
-                Watashitachi wa Sou Yatte Ikite Iku Jinshu na no
-              </p>
-              <p class="artist">Masaru Yokoyama</p>
-            </div>
+  </div>
+  <!-- PLAYER -->
+  <footer>
+    <div class="music-player">
+      <div class="song-bar">
+        <div class="song-infos">
+          <div class="image-container">
+            <img src="./mediaplayer/media/thumbnail.png" alt="song thumbnail" />
           </div>
-          <div class="icons">
-            <i class="fas fa-plus-circle"></i>
+          <div class="song-description">
+            <p class="title">
+              Watashitachi wa Sou Yatte Ikite Iku Jinshu na no
+            </p>
+            <p class="artist">Masaru Yokoyama</p>
           </div>
         </div>
-        <div class="progress-controller">
-          <div class="control-buttons">
-            <i class="fas fa-random"></i>
-            <i class="fas fa-step-backward"></i>
-            <i class="play-pause fas fa-play"></i>
-            <i class="fas fa-step-forward"></i>
-            <i class="fas fa-undo-alt"></i>
-          </div>
-          <div class="progress-container">
-            <span>0:00</span>
-            <div class="progress-bar">
-              <div class="progress"></div>
-            </div>
-            <span></span>
-          </div>
+        <div class="icons">
+          <i class="fas fa-plus-circle"></i>
         </div>
-
-        <div class="other-features">
-          <i class="fas fa-list-ul"></i>
-          <i class="fas fa-desktop"></i>
-          <div class="volume-bar">
-            <i class="fas fa-volume-down"></i>
-            <input
-              type="range"
-              id="volume-control"
-              class="progress-bar"
-              min="0"
-              max="1"
-              step="0.1"
-              value="1"
-            />
-          </div>
-          <i class="fas fa-expand-alt"></i>
-        </div>
-        <audio id="song">
-          <source src="./mediaplayer/media/Go-NEFFEX.mp3" type="audio/mpeg" />
-        </audio>
       </div>
-    </footer>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
-    <script src="./assets/js/artist.js"></script>
-    <script src="./mediaplayer/player.js"></script>
-  </body>
+      <div class="progress-controller">
+        <div class="control-buttons">
+          <i class="fas fa-random"></i>
+          <i class="fas fa-step-backward"></i>
+          <i class="play-pause fas fa-play"></i>
+          <i class="fas fa-step-forward"></i>
+          <i class="fas fa-undo-alt"></i>
+        </div>
+        <div class="progress-container">
+          <span>0:00</span>
+          <div class="progress-bar">
+            <div class="progress"></div>
+          </div>
+          <span></span>
+        </div>
+      </div>
+
+      <div class="other-features">
+        <i class="fas fa-list-ul"></i>
+        <i class="fas fa-desktop"></i>
+        <div class="volume-bar">
+          <i class="fas fa-volume-down"></i>
+          <input type="range" id="volume-control" class="progress-bar" min="0" max="1" step="0.1" value="1" />
+        </div>
+        <i class="fas fa-expand-alt"></i>
+      </div>
+      <audio id="song">
+        <source src="./mediaplayer/media/Go-NEFFEX.mp3" type="audio/mpeg" />
+      </audio>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="./assets/js/artist.js"></script>
+  <script src="./mediaplayer/player.js"></script>
+</body>
+
 </html>

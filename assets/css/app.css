@@ -12821,6 +12821,8 @@ button:hover {
 #main {
   height: 86vh;
   overflow: auto;
+  border-radius: 2em;
+
 }
 
 #main::-webkit-scrollbar {
@@ -12832,7 +12834,7 @@ button:hover {
 }
 
 #div-playlist {
-  height: 75vh;
+  height: 73vh;
   overflow: auto;
 }
 

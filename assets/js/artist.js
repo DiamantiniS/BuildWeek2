@@ -253,20 +253,30 @@ const unpackArtist = function (object) {
   const thumbnailArtistaSmall = object.picture_small;
   const ascoltatoriMensili = object.nb_fan;
   const tracklistUrl = object.tracklist;
+
   indirizzoTracks = tracklistUrl;
   console.log("artist", object);
-
+  const containerArtistImg = document.getElementById('containerArtistImg')
   document.querySelector("#container-overImg h1").innerHTML = nomeArtista;
   document.getElementById("artistNameHeader").innerHTML = nomeArtista;
   document.getElementsByTagName("title")[0].innerHTML =
     nomeArtista + " | Spotify";
-  document.getElementById("imgArtist").setAttribute("src", thumbnailArtista);
+
+    containerArtistImg.innerHTML = `
+                                    <img id="imgArtist" class="ps-sm-3 object-fit-cover position-absolute top-0"
+                                    src="${thumbnailArtista}" alt="artist img" onload="start()"
+                                    crossorigin="anonymous" />
+
+                                   `
+  
+  // document.getElementById("imgArtist").setAttribute("src", thumbnailArtista);
+  // start()
+
   document
     .getElementById("imgArtistSmall")
     .setAttribute("src", thumbnailArtistaSmall);
   document.getElementById("listener-mth").innerHTML =
     ascoltatoriMensili + " ascoltatori mensili";
-    start()
 
 };
 
@@ -405,7 +415,7 @@ const scroll = function(hex) {
   mainContainer.addEventListener('scroll', function (e) {
     let scroll = e.target.scrollTop;
     //console.log('scroll main =', scroll);       //260 
-    if (scroll > 303) {
+    if (scroll > 300) {
       playHeader.classList.add('d-sm-inline')
       artistNameHeader.classList.add('d-sm-inline')
       header.setAttribute('style', `background-color: #${newHex}`)
