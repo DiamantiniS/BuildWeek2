@@ -1,128 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Spotify</title>
-  <link rel="stylesheet" href="./assets/css/circular-font.css" />
-  <link rel="stylesheet" href="./assets/css/app.css" />
-  <link rel="icon" href="./assets/imgs/logo_circular_green.svg" type="image/x-icon" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-  <link rel="stylesheet" href="./assets/css/circular-font.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-
-<body class="bg-black vh-100 text-white">
-  <div class="container-fluid px-4">
-    <div class="row pt-3">
-      <div class="col-12 col-sm-1 col-md-3">
-        <div class="row g-2">
-          <div class="col-12" id="nav">
-            <ul class="ps-1 d-flex justify-content-around d-sm-block my-2">
-              <li class="list-group-item pt-2">
-                <a href="./index.html"
-                  class="text-white text-decoration-none d-flex flex-column align-items-center flex-sm-row opacity-75"><img
-                    src="./assets/imgs/home.svg" /><span class="d-block d-sm-none d-md-inline">Home</span></a>
-              </li>
-              <li class="list-group-item pt-2">
-                <a href="#"
-                  class="text-white text-decoration-none d-flex flex-column align-items-center flex-sm-row opacity-75"><img
-                    src="./assets/imgs/searchUnselected.svg" /><span
-                    class="d-block d-sm-none d-md-inline">Cerca</span></a>
-              </li>
-              <li class="list-group-item pt-2">
-                <a href="#"
-                  class="text-white text-decoration-none d-flex flex-column align-items-center flex-sm-row opacity-75"><img
-                    src="./assets/imgs/libraryExpand.svg" /><span class="d-block d-sm-none d-md-inline">La mia
-                    libreria</span></a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-12 bg-dark d-none d-sm-block">
-            <div class="d-flex gap-3 mt-2">
-              <img src="#" />
-              <div class="text-white d-none d-md-block">
-                <div>
-                  <h5>Titolo</h5>
-                  <p>Playlist</p>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Spotify</title>
+    <link rel="stylesheet" href="./assets/css/circular-font.css" />
+    <link rel="stylesheet" href="./assets/css/app.css" />
+    <link
+      rel="icon"
+      href="./assets/imgs/logo_circular_green.svg"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/circular-font.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="bg-black vh-100 text-white">
+    <div class="container-fluid px-4">
+      <div class="row pt-3">
+        <div class="col-12 col-sm-1 col-md-3">
+          <div class="row g-2">
+            <div class="col-12" id="nav">
+              <ul class="ps-1 d-flex justify-content-around d-sm-block my-2">
+                <li class="list-group-item pt-2">
+                  <a
+                    href="./index.html"
+                    class="text-white text-decoration-none d-flex flex-column align-items-center flex-sm-row opacity-75"
+                    ><img src="./assets/imgs/home.svg" /><span
+                      class="d-block d-sm-none d-md-inline"
+                      >Home</span
+                    ></a
+                  >
+                </li>
+                <li class="list-group-item pt-2">
+                  <a
+                    href="./cerca.html"
+                    class="text-white text-decoration-none d-flex flex-column align-items-center flex-sm-row opacity-75"
+                    ><img src="./assets/imgs/searchUnselected.svg" /><span
+                      class="d-block d-sm-none d-md-inline"
+                      >Cerca</span
+                    ></a
+                  >
+                </li>
+                <li class="list-group-item pt-2">
+                  <a
+                    href="#"
+                    class="text-white text-decoration-none d-flex flex-column align-items-center flex-sm-row opacity-75"
+                    ><img src="./assets/imgs/libraryExpand.svg" /><span
+                      class="d-block d-sm-none d-md-inline"
+                      >La mia libreria</span
+                    ></a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="col-12 bg-dark d-none d-sm-block" id="div-playlist">
+              <div class="d-flex gap-3 mt-2">
+                <img src="#" />
+                <div class="text-white d-none d-md-block">
+                  <div>
+                    <h5>Titolo</h5>
+                    <p>Playlist</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="d-flex gap-3">
-              <img src="#" />
-              <div class="text-white d-none d-md-block">
-                <div>
-                  <h5>Titolo</h5>
-                  <p>Playlist</p>
+              <div class="d-flex gap-3">
+                <img src="#" />
+                <div class="text-white d-none d-md-block">
+                  <div>
+                    <h5>Titolo</h5>
+                    <p>Playlist</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="d-flex gap-3">
-              <img src="#" />
-              <div class="text-white d-none d-md-block">
-                <div>
-                  <h5>Titolo</h5>
-                  <p>Playlist</p>
+              <div class="d-flex gap-3">
+                <img src="#" />
+                <div class="text-white d-none d-md-block">
+                  <div>
+                    <h5>Titolo</h5>
+                    <p>Playlist</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="d-flex gap-3">
-              <img src="#" />
-              <div class="text-white d-none d-md-block">
-                <div>
-                  <h5>Titolo</h5>
-                  <p>Playlist</p>
+              <div class="d-flex gap-3">
+                <img src="#" />
+                <div class="text-white d-none d-md-block">
+                  <div>
+                    <h5>Titolo</h5>
+                    <p>Playlist</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="d-flex gap-3">
-              <img src="#" />
-              <div class="text-white d-none d-md-block">
-                <div>
-                  <h5>Titolo</h5>
-                  <p>Playlist</p>
+              <div class="d-flex gap-3">
+                <img src="#" />
+                <div class="text-white d-none d-md-block">
+                  <div>
+                    <h5>Titolo</h5>
+                    <p>Playlist</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="d-flex gap-3">
-              <img src="#" />
-              <div class="text-white d-none d-md-block">
-                <div>
-                  <h5>Titolo</h5>
-                  <p>Playlist</p>
+              <div class="d-flex gap-3">
+                <img src="#" />
+                <div class="text-white d-none d-md-block">
+                  <div>
+                    <h5>Titolo</h5>
+                    <p>Playlist</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="d-flex gap-3">
-              <img src="#" />
-              <div class="text-white d-none d-md-block">
-                <div>
-                  <h5>Titolo</h5>
-                  <p>Playlist</p>
+              <div class="d-flex gap-3">
+                <img src="#" />
+                <div class="text-white d-none d-md-block">
+                  <div>
+                    <h5>Titolo</h5>
+                    <p>Playlist</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="d-flex gap-3">
-              <img src="#" />
-              <div class="text-white d-none d-md-block">
-                <div>
-                  <h5>Titolo</h5>
-                  <p>Playlist</p>
+              <div class="d-flex gap-3">
+                <img src="#" />
+                <div class="text-white d-none d-md-block">
+                  <div>
+                    <h5>Titolo</h5>
+                    <p>Playlist</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
         <!-- MAIN -->
-        <div
-          class="col-12 col-sm-11 col-md-9 py-2 border border-white"
-          id="main"
-        >
+        <div class="col-12 col-sm-11 col-md-9 py-2" id="main">
           <div
-            class="position-sticky top-0 d-flex text-white align-items-center justify-content-sm-between"
+            class="position-sticky top-0 d-flex text-white align-items-center justify-content-sm-between barra"
           >
             <div class="d-sm-flex d-none">
               <button
@@ -253,13 +273,18 @@
                           <i class="bi bi-plus-circle"></i>
                         </button>
 
-                      <button class="btn text-white">
-                        <i class="bi bi-check-circle-fill text-green-spotyfy d-none"></i>
+                        <button class="btn text-white">
+                          <i
+                            class="bi bi-check-circle-fill text-green-spotyfy d-none"
+                          ></i>
+                        </button>
+                      </div>
+                      <button class="btn">
+                        <i
+                          class="bi bi-play-circle-fill text-green-spotyfy fs-1"
+                        ></i>
                       </button>
                     </div>
-                    <button class="btn">
-                      <i class="bi bi-play-circle-fill text-green-spotyfy fs-1"></i>
-                    </button>
                   </div>
                 </div>
               </div>
@@ -289,47 +314,71 @@
                     >
                   </div>
                 </div>
-              </div>
-              <div class="col-6 col-sm-4 col-md-3 mycard position-relative effect pt-2 rounded-3">
-                <div class="card bg-transparent border border-0 text-white">
-                  <a href="#" class="text-decoration-none text-white">
-                    <img src="./assets/imgs/main/image-10.jpg" class="card-img-top" alt="..." />
-                    <button class="btn icona">
-                      <i class="bi bi-play-circle-fill text-green-spotyfy fs-1"></i>
-                    </button>
-                    <div class="card-body ps-1">
-                      <h5 class="card-title">Titolo</h5>
-                      <p class="card-text">Album • Artista</p>
-                    </div>
-                  </a>
+                <div
+                  class="col-6 col-sm-4 col-md-3 mycard position-relative effect pt-2 rounded-3"
+                >
+                  <div class="card bg-transparent border border-0 text-white">
+                    <a href="#" class="text-decoration-none text-white">
+                      <img
+                        src="./assets/imgs/main/image-10.jpg"
+                        class="card-img-top"
+                        alt="..."
+                      />
+                      <button class="btn icona">
+                        <i
+                          class="bi bi-play-circle-fill text-green-spotyfy fs-1"
+                        ></i>
+                      </button>
+                      <div class="card-body ps-1">
+                        <h5 class="card-title">Titolo</h5>
+                        <p class="card-text">Album • Artista</p>
+                      </div></a
+                    >
+                  </div>
                 </div>
-              </div>
-              <div class="col-6 col-sm-4 col-md-3 d-none d-sm-block mycard position-relative effect pt-2 rounded-3">
-                <div class="card bg-transparent border border-0 text-white">
-                  <a href="#" class="text-decoration-none text-white">
-                    <img src="./assets/imgs/main/image-10.jpg" class="card-img-top" alt="..." />
-                    <button class="btn icona">
-                      <i class="bi bi-play-circle-fill text-green-spotyfy fs-1"></i>
-                    </button>
-                    <div class="card-body ps-1">
-                      <h5 class="card-title">Titolo</h5>
-                      <p class="card-text">Album • Artista</p>
-                    </div>
-                  </a>
+                <div
+                  class="col-6 col-sm-4 col-md-3 d-none d-sm-block mycard position-relative effect pt-2 rounded-3"
+                >
+                  <div class="card bg-transparent border border-0 text-white">
+                    <a href="#" class="text-decoration-none text-white">
+                      <img
+                        src="./assets/imgs/main/image-10.jpg"
+                        class="card-img-top"
+                        alt="..."
+                      />
+                      <button class="btn icona">
+                        <i
+                          class="bi bi-play-circle-fill text-green-spotyfy fs-1"
+                        ></i>
+                      </button>
+                      <div class="card-body ps-1">
+                        <h5 class="card-title">Titolo</h5>
+                        <p class="card-text">Album • Artista</p>
+                      </div></a
+                    >
+                  </div>
                 </div>
-              </div>
-              <div class="col-6 col-sm-4 col-md-3 d-none d-md-block mycard position-relative effect pt-2 rounded-3">
-                <div class="card bg-transparent border border-0 text-white">
-                  <a href="#" class="text-decoration-none text-white">
-                    <img src="./assets/imgs/main/image-10.jpg" class="card-img-top" alt="..." />
-                    <button class="btn icona">
-                      <i class="bi bi-play-circle-fill text-green-spotyfy fs-1"></i>
-                    </button>
-                    <div class="card-body ps-1">
-                      <h5 class="card-title">Titolo</h5>
-                      <p class="card-text">Album • Artista</p>
-                    </div>
-                  </a>
+                <div
+                  class="col-6 col-sm-4 col-md-3 d-none d-md-block mycard position-relative effect pt-2 rounded-3"
+                >
+                  <div class="card bg-transparent border border-0 text-white">
+                    <a href="#" class="text-decoration-none text-white">
+                      <img
+                        src="./assets/imgs/main/image-10.jpg"
+                        class="card-img-top"
+                        alt="..."
+                      />
+                      <button class="btn icona">
+                        <i
+                          class="bi bi-play-circle-fill text-green-spotyfy fs-1"
+                        ></i>
+                      </button>
+                      <div class="card-body ps-1">
+                        <h5 class="card-title">Titolo</h5>
+                        <p class="card-text">Album • Artista</p>
+                      </div></a
+                    >
+                  </div>
                 </div>
               </div>
             </div>
@@ -358,47 +407,71 @@
                     >
                   </div>
                 </div>
-              </div>
-              <div class="col-6 col-sm-4 col-md-3 mycard position-relative effect pt-2 rounded-3">
-                <div class="card bg-transparent border border-0 text-white">
-                  <a href="#" class="text-decoration-none text-white">
-                    <img src="./assets/imgs/main/image-10.jpg" class="card-img-top" alt="..." />
-                    <button class="btn icona">
-                      <i class="bi bi-play-circle-fill text-green-spotyfy fs-1"></i>
-                    </button>
-                    <div class="card-body ps-1">
-                      <h5 class="card-title">Titolo</h5>
-                      <p class="card-text">Album • Artista</p>
-                    </div>
-                  </a>
+                <div
+                  class="col-6 col-sm-4 col-md-3 mycard position-relative effect pt-2 rounded-3"
+                >
+                  <div class="card bg-transparent border border-0 text-white">
+                    <a href="#" class="text-decoration-none text-white">
+                      <img
+                        src="./assets/imgs/main/image-10.jpg"
+                        class="card-img-top"
+                        alt="..."
+                      />
+                      <button class="btn icona">
+                        <i
+                          class="bi bi-play-circle-fill text-green-spotyfy fs-1"
+                        ></i>
+                      </button>
+                      <div class="card-body ps-1">
+                        <h5 class="card-title">Titolo</h5>
+                        <p class="card-text">Album • Artista</p>
+                      </div></a
+                    >
+                  </div>
                 </div>
-              </div>
-              <div class="col-6 col-sm-4 col-md-3 d-none d-sm-block mycard position-relative effect pt-2 rounded-3">
-                <div class="card bg-transparent border border-0 text-white">
-                  <a href="#" class="text-decoration-none text-white">
-                    <img src="./assets/imgs/main/image-10.jpg" class="card-img-top" alt="..." />
-                    <button class="btn icona">
-                      <i class="bi bi-play-circle-fill text-green-spotyfy fs-1"></i>
-                    </button>
-                    <div class="card-body ps-1">
-                      <h5 class="card-title">Titolo</h5>
-                      <p class="card-text">Album • Artista</p>
-                    </div>
-                  </a>
+                <div
+                  class="col-6 col-sm-4 col-md-3 d-none d-sm-block mycard position-relative effect pt-2 rounded-3"
+                >
+                  <div class="card bg-transparent border border-0 text-white">
+                    <a href="#" class="text-decoration-none text-white">
+                      <img
+                        src="./assets/imgs/main/image-10.jpg"
+                        class="card-img-top"
+                        alt="..."
+                      />
+                      <button class="btn icona">
+                        <i
+                          class="bi bi-play-circle-fill text-green-spotyfy fs-1"
+                        ></i>
+                      </button>
+                      <div class="card-body ps-1">
+                        <h5 class="card-title">Titolo</h5>
+                        <p class="card-text">Album • Artista</p>
+                      </div></a
+                    >
+                  </div>
                 </div>
-              </div>
-              <div class="col-6 col-sm-4 col-md-3 d-none d-md-block mycard position-relative effect pt-2 rounded-3">
-                <div class="card bg-transparent border border-0 text-white">
-                  <a href="#" class="text-decoration-none text-white">
-                    <img src="./assets/imgs/main/image-10.jpg" class="card-img-top" alt="..." />
-                    <button class="btn icona">
-                      <i class="bi bi-play-circle-fill text-green-spotyfy fs-1"></i>
-                    </button>
-                    <div class="card-body ps-1">
-                      <h5 class="card-title">Titolo</h5>
-                      <p class="card-text">Album • Artista</p>
-                    </div>
-                  </a>
+                <div
+                  class="col-6 col-sm-4 col-md-3 d-none d-md-block mycard position-relative effect pt-2 rounded-3"
+                >
+                  <div class="card bg-transparent border border-0 text-white">
+                    <a href="#" class="text-decoration-none text-white">
+                      <img
+                        src="./assets/imgs/main/image-10.jpg"
+                        class="card-img-top"
+                        alt="..."
+                      />
+                      <button class="btn icona">
+                        <i
+                          class="bi bi-play-circle-fill text-green-spotyfy fs-1"
+                        ></i>
+                      </button>
+                      <div class="card-body ps-1">
+                        <h5 class="card-title">Titolo</h5>
+                        <p class="card-text">Album • Artista</p>
+                      </div></a
+                    >
+                  </div>
                 </div>
               </div>
             </div>
@@ -406,11 +479,11 @@
         </div>
       </div>
     </div>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
-  <script src="./assets/js/index.js"></script>
-</body>
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./assets/js/index.js"></script>
+  </body>
 </html>

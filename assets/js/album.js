@@ -9,7 +9,7 @@ const showPlaylist = function (object) {
   for (let i = 0; i < numeroConsigliati; i++) {
     let singolaPlaylist = document.createElement("div");
     singolaPlaylist.classList.add("d-flex", "gap-3");
-    singolaPlaylist.innerHTML = `<img src="${arrayPlaylist[i].album.cover_small}" class="object-fit-cover p-1"/>
+    singolaPlaylist.innerHTML = `<img src="${arrayPlaylist[i].album.cover_small}" class="object-fit-cover p-1 img-fluid"/>
   <div class="text-white d-none d-md-block">
     <h5>${arrayPlaylist[i].title_short}</h5>
     <p>${arrayPlaylist[i].artist.name}</p>
@@ -62,7 +62,6 @@ const altroDiArtista = function (obj) {
   />
   <div class="card-body">
     <p class="card-text text-white">${obj.data[i].album.title}</p>
-    <p class="card-text text-white">ANNO USCITA</p>
   </div>
   <button class="button" style="font-size: 3em">
     <i
@@ -94,6 +93,68 @@ const fetchAltro = function (id) {
     });
 };
 
+// CAMBIO PAGINA, ARTISTA SELEZIONATO
+
+const artistaSelezionato = function () {
+  window.location.href = `artist.html?artistId=${this.title}`;
+};
+
+// BOTTONI PLUS E CHECK
+
+const buttonFunction = function () {
+  const plusElements = document.getElementsByClassName("plus");
+  const checkElements = document.getElementsByClassName("check");
+
+  //Il plus diventa check
+  Array.from(plusElements).forEach((plus, i) => {
+    console.log("entro nel foreach");
+    plus.addEventListener("click", function (e) {
+      e.preventDefault();
+      console.log("diventa check");
+
+      plus.classList.remove("d-block");
+      plus.classList.add("d-none");
+
+      const check = checkElements[i];
+      check.classList.remove("d-none");
+      check.classList.add("d-block");
+    });
+  });
+
+  //Il check diventa plus
+  Array.from(checkElements).forEach((check, i) => {
+    check.addEventListener("click", function (e) {
+      e.preventDefault();
+      console.log("torna plus");
+
+      check.classList.remove("d-block");
+      check.classList.add("d-none");
+
+      const plus = plusElements[i];
+      plus.classList.remove("d-none");
+      plus.classList.add("d-block");
+    });
+  });
+};
+
+// FUNZIONE PER USARE IL PLAYER
+
+const uploadPlayer = function () {
+  const srcPlayer = document.querySelector("#song source");
+  const imgPlayer = document.querySelector(".image-container img");
+  const tagAudio = document.getElementById("song");
+  const titoloPlayer = document.querySelector(".title");
+  const artistaPlayer = document.querySelector(".artist");
+
+  srcPlayer.src = this.getAttribute("id");
+  imgPlayer.src = this.getAttribute("title");
+  titoloPlayer.innerText = this.querySelector(".name-song").innerText;
+  artistaPlayer.innerText = this.querySelector(".name-artist").innerText;
+  tagAudio.load();
+};
+
+// INSERIMENTO TRACCE
+
 const unpackAlbum = function (object) {
   const titoloAlbum = object.title;
   const coverAlbum = object.cover_big;
@@ -118,13 +179,26 @@ const unpackAlbum = function (object) {
     " brani • " +
     durataInMinuti +
     " min";
+  document
+    .getElementById("info-album")
+    .setAttribute("title", `${object.artist.id}`);
+  document
+    .getElementById("info-album")
+    .addEventListener("click", artistaSelezionato);
 
   console.log(arrayTracks);
   const songList = document.getElementById("list-songs");
   songList.innerHTML = "";
   arrayTracks.forEach((element, index) => {
     const divCanzone = document.createElement("div");
-    divCanzone.classList.add("d-flex", "justify-content-between", "mt-3");
+    divCanzone.classList.add(
+      "d-flex",
+      "justify-content-between",
+      "mt-3",
+      "canzone"
+    );
+    divCanzone.setAttribute("id", `${element.preview}`);
+    divCanzone.setAttribute("title", `${element.album.cover_small}`);
     divCanzone.innerHTML = `<div class="d-flex">
     <div class="px-4 py-3 number-song">${index + 1}</div>
     <div>
@@ -132,16 +206,25 @@ const unpackAlbum = function (object) {
       <p class="name-artist">${element.artist.name}</p>
     </div>
   </div>
-  <div class="d-flex mt-2">
-    <i class="bi bi-plus-circle me-4"></i>
-    <p class="minutes-song">${Math.floor(element.duration / 60)}:${Math.floor(
-      element.duration % 60
-    )} </p>
+  <div class="d-flex mt-2 align-items-center justify-content-center">
+  <div class="d-flex">
+  <button class="btn text-white plus">
+      <i class="bi bi-plus-circle"></i>
+  </button>
+  <button class="btn text-white check d-none">
+      <i class="bi bi-check-circle-fill text-green-spotyfy"></i>
+  </button>
+</div>
+    <p class="minutes-song mb-0">${Math.floor(
+      element.duration / 60
+    )}:${Math.floor(element.duration % 60)} </p>
     <i class="bi bi-three-dots text-white mx-2"></i>
   </div>`;
+    divCanzone.addEventListener("click", uploadPlayer);
     songList.appendChild(divCanzone);
   });
   fetchAltro(arrayTracks[0].artist.id);
+  buttonFunction();
 };
 
 const getAlbum = function () {

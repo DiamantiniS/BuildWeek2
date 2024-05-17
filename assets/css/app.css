@@ -12819,7 +12819,7 @@ button:hover {
 }
 
 #main {
-  height: 90vh;
+  height: 86vh;
   overflow: auto;
 }
 
@@ -12842,4 +12842,11 @@ button:hover {
 
 #div-playlist::-webkit-scrollbar-thumb {
   background-color: rgba(255, 255, 255, 0.4);
+}
+.canzone:hover {
+  background-color: rgba(56, 52, 52, 0.6470588235);
+}
+
+.barra {
+  z-index: 2;
 }
