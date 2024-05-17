@@ -31,6 +31,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="stylesheet" href="./mediaplayer/mediaquery.css" />
   </head>
   <body class="bg-black text-white">
     <div class="container-fluid p-0 px-sm-4">
@@ -72,64 +73,10 @@
               </ul>
             </div>
             <!-- PLAYLIST -->
-            <div class="col-12 bg-dark d-none d-sm-block" id="div-playlist">
-              <div class="d-flex gap-3 mt-2">
-                <img src="#" />
-                <div class="text-white d-none d-md-block">
-                  <h5>Titolo</h5>
-                  <p>Playlist</p>
-                </div>
-              </div>
-              <div class="d-flex gap-3">
-                <img src="#" />
-                <div class="text-white d-none d-md-block">
-                  <h5>Titolo</h5>
-                  <p>Playlist</p>
-                </div>
-              </div>
-              <div class="d-flex gap-3">
-                <img src="#" />
-                <div class="text-white d-none d-md-block">
-                  <h5>Titolo</h5>
-                  <p>Playlist</p>
-                </div>
-              </div>
-              <div class="d-flex gap-3">
-                <img src="#" />
-                <div class="text-white d-none d-md-block">
-                  <h5>Titolo</h5>
-                  <p>Playlist</p>
-                </div>
-              </div>
-              <div class="d-flex gap-3">
-                <img src="#" />
-                <div class="text-white d-none d-md-block">
-                  <h5>Titolo</h5>
-                  <p>Playlist</p>
-                </div>
-              </div>
-              <div class="d-flex gap-3">
-                <img src="#" />
-                <div class="text-white d-none d-md-block">
-                  <h5>Titolo</h5>
-                  <p>Playlist</p>
-                </div>
-              </div>
-              <div class="d-flex gap-3">
-                <img src="#" />
-                <div class="text-white d-none d-md-block">
-                  <h5>Titolo</h5>
-                  <p>Playlist</p>
-                </div>
-              </div>
-              <div class="d-flex gap-3">
-                <img src="#" />
-                <div class="text-white d-none d-md-block">
-                  <h5>Titolo</h5>
-                  <p>Playlist</p>
-                </div>
-              </div>
-            </div>
+            <div
+              class="col-12 bg-dark d-none d-sm-block"
+              id="div-playlist"
+            ></div>
           </div>
         </div>
         <div
@@ -187,7 +134,7 @@
             <img
               id="imgArtist"
               class="ps-sm-3 object-fit-cover position-absolute top-0"
-              src="https://e-cdns-images.dzcdn.net/images/artist/1ab642216454f5e5e02c234f93af481c/1000x1000-000000-80-0-0.jpg"
+              src="#"
               alt="artist img"
               crossorigin="anonymous"
             />
@@ -201,9 +148,7 @@
               <p class="d-none d-sm-inline taxt-white ms-1">
                 Artista Verificato
               </p>
-              <h1 id="artistNameTitle" class="text-white">
-                Nome Artista (artist -> name:...)
-              </h1>
+              <h1 id="artistNameTitle" class="text-white"></h1>
             </div>
             <span id="listener-mth"></span>
             <div
@@ -248,41 +193,20 @@
                   <img
                     id="imgArtistSmall"
                     class="rounded-circle"
-                    src="https://e-cdns-images.dzcdn.net/images/artist/1ab642216454f5e5e02c234f93af481c/56x56-000000-80-0-0.jpg"
+                    src="#"
                     alt="artist icon"
                   />
                   <!-- artist -> picture_samll:...-->
                 </button>
                 <div>
                   <h3 class="m-0">Brani che ti piacciono</h3>
-                  <p id="prefSong" class="m-0 opacity-75">
-                    "n" brano/i di "artista"
-                  </p>
+                  <p id="prefSong" class="m-0 opacity-75">"2 brani aggiunti"</p>
                 </div>
               </div>
               <!-- PIU' ASCOLTATE -->
               <h2>Popolari</h2>
               <div id="popTrack" class="container-fluid">
-                <div class="row my-1">
-                  <div
-                    class="col-1 d-flex align-items-center justify-content-center"
-                  >
-                    <p class="m-0">n°</p>
-                  </div>
-                  <div class="col-10 d-flex">
-                    <img src="https://placehold.co/50" alt="img album" />
-                    <!-- album -> artist -> cover_small:... -->
-                    <div class="ms-3">
-                      <h4 class="m-0">"album -> title_short:..."</h4>
-                      <p class="m-0 opacity-75">"album -> rank:..."</p>
-                    </div>
-                  </div>
-                  <div
-                    class="col-1 d-flex align-items-center justify-content-center"
-                  >
-                    <i class="bi bi-three-dots-vertical fs-4 opacity-75"></i>
-                  </div>
-                </div>
+                <div class="row my-1"></div>
               </div>
             </div>
           </div>

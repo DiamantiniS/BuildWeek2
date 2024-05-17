@@ -1,0 +1,60 @@
+@media (max-width: 577px) {
+  .music-player {
+    height: 4rem;
+    display: flex;
+    justify-content: space-evenly;
+    border-radius: 1.2em;
+    position: fixed;
+    bottom: 8vh;
+    width: 100vw;
+  }
+  .image-container {
+    --size: 3.5em;
+    flex-shrink: 0;
+    width: var(--size);
+    height: var(--size);
+  }
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  .song-infos {
+    width: 100%;
+  }
+  .song-bar {
+    gap: 1rem;
+    width: 100%;
+    position: relative;
+  }
+  .control-buttons > *:not(.play-pause) {
+    display: none;
+  }
+  .progress-controller {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    margin-right: 2em;
+    width: 20%;
+  }
+
+  .play-pause {
+    padding: 0em;
+    background-color: #111;
+    color: var(--second-color);
+  }
+  .play-pause:hover {
+    transform: scale(1.1);
+    color: var(--first-color);
+  }
+
+  .progress-container {
+    display: none;
+  }
+
+  .other-features {
+    display: none;
+  }
+}

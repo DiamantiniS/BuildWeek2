@@ -24,6 +24,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="stylesheet" href="./mediaplayer/mediaquery.css" />
     <style>
       #titolo {
         font-size: 3rem;
@@ -117,64 +118,7 @@
             <div
               class="col-12 bg-dark d-none d-sm-block mb-2"
               id="div-playlist"
-            >
-              <div class="d-flex gap-3">
-                <img src="#" />
-                <div class="text-white d-none d-md-block">
-                  <h5>Titolo</h5>
-                  <p>Playlist</p>
-                </div>
-              </div>
-              <div class="d-flex gap-3">
-                <img src="#" />
-                <div class="text-white d-none d-md-block">
-                  <h5>Titolo</h5>
-                  <p>Playlist</p>
-                </div>
-              </div>
-              <div class="d-flex gap-3">
-                <img src="#" />
-                <div class="text-white d-none d-md-block">
-                  <h5>Titolo</h5>
-                  <p>Playlist</p>
-                </div>
-              </div>
-              <div class="d-flex gap-3">
-                <img src="#" />
-                <div class="text-white d-none d-md-block">
-                  <h5>Titolo</h5>
-                  <p>Playlist</p>
-                </div>
-              </div>
-              <div class="d-flex gap-3">
-                <img src="#" />
-                <div class="text-white d-none d-md-block">
-                  <h5>Titolo</h5>
-                  <p>Playlist</p>
-                </div>
-              </div>
-              <div class="d-flex gap-3">
-                <img src="#" />
-                <div class="text-white d-none d-md-block">
-                  <h5>Titolo</h5>
-                  <p>Playlist</p>
-                </div>
-              </div>
-              <div class="d-flex gap-3">
-                <img src="#" />
-                <div class="text-white d-none d-md-block">
-                  <h5>Titolo</h5>
-                  <p>Playlist</p>
-                </div>
-              </div>
-              <div class="d-flex gap-3">
-                <img src="#" />
-                <div class="text-white d-none d-md-block">
-                  <h5>Titolo</h5>
-                  <p>Playlist</p>
-                </div>
-              </div>
-            </div>
+            ></div>
           </div>
         </div>
         <div class="col-12 col-sm-11 col-md-9 py-2 position-relative" id="main">
@@ -212,15 +156,15 @@
             id="hero-album"
           >
             <img
-              src="./assets/imgs/main/image-1.jpg"
+              src="#"
               alt="album"
               style="width: 11rem"
               class="m-3"
               id="img-album"
             />
             <div>
-              <p class="d-none d-sm-block">Album</p>
-              <p id="titolo">TITOLO</p>
+              <p class="d-none d-sm-block"></p>
+              <p id="titolo"></p>
               <div class="d-flex align-items-center mt-3" id="info-album">
                 <img
                   src="#"
@@ -286,70 +230,17 @@
             </div>
           </div>
           <!-------- lista canzoni-->
-          <div id="list-songs">
-            <div class="d-flex justify-content-between mt-3">
-              <div class="d-flex">
-                <div class="px-4 py-3 number-song">1</div>
-                <div>
-                  <p class="fs-4 m-0 name-song">TITOLO</p>
-                  <p class="name-artist">ARTISTA</p>
-                </div>
-              </div>
-              <div class="d-flex mt-2 d-none d-sm-flex">
-                <i class="bi bi-plus-circle me-4"></i>
-                <p class="minutes-song"></p>
-                <i class="bi bi-three-dots text-white mx-2"></i>
-              </div>
-              <i class="bi bi-three-dots-vertical fs-2 d-sm-none"></i>
-            </div>
-          </div>
+          <div id="list-songs"></div>
           <!----- sottotitoli di coda -->
           <div class="mt-3">
             <p class="m-0" id="album-date">data</p>
-            <p class="m-0">produzione</p>
-            <p class="m-0">&copy; Universal music italia</p>
           </div>
           <!----------- inizio altro di autore-->
           <div class="d-flex justify-content-between align-items-center mt-5">
             <p>ALTRO DI ARTISTA</p>
             <p>Vedi discografia</p>
           </div>
-
-          <div class="d-flex" id="album-artista">
-            <div class="card me-2 me-sm-4 bg-transparent" style="width: 10rem">
-              <img
-                src="./assets/imgs/main/image-10.jpg"
-                class="card-img-top"
-                alt="album"
-              />
-              <div class="card-body">
-                <p class="card-text text-white">TITOLO ALBUM</p>
-                <p class="card-text text-white">ANNO USCITA</p>
-              </div>
-              <button class="button" style="font-size: 3em">
-                <i
-                  class="bi bi-play-circle-fill text-green-spotyfy bg-black rounded-circle"
-                ></i>
-              </button>
-            </div>
-
-            <div class="card me-2 me-sm-4 bg-transparent" style="width: 10rem">
-              <img
-                src="./assets/imgs/main/image-10.jpg"
-                class="card-img-top"
-                alt="album"
-              />
-              <div class="card-body">
-                <p class="card-text text-white">TITOLO ALBUM</p>
-                <p class="card-text text-white">ANNO USCITA</p>
-              </div>
-              <button class="button" style="font-size: 3em">
-                <i
-                  class="bi bi-play-circle-fill text-green-spotyfy bg-black rounded-circle"
-                ></i>
-              </button>
-            </div>
-          </div>
+          <div class="d-flex" id="album-artista"></div>
           <div class="mt-5 d-none d-sm-block">
             <div class="container border-bottom border-white pb-3">
               <div class="row-cols-6 d-flex justify-content-around">
